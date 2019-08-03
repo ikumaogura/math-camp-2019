@@ -1,0 +1,173 @@
+---
+title: 'R Lab 2: Working with Objects and Functions'
+author: "Ikuma Ogura"
+institution: "Georgetown University"
+date: "August 21, 2019"
+output: 
+  beamer_presentation:
+    theme: Boadilla
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Today
+
+- Using R as Calculator
+
+\smallskip
+
+- Object
+
+    - Object class/type
+
+\smallskip
+
+- Functions
+
+## Using R as Calculator
+
+```{r, echo = TRUE, tidy = FALSE}
+5 + 3 # summation
+4 - 7 # substration
+5 * 6 # product
+7 / 3 # division
+```
+
+## Using R as Calculator (cont.)
+
+```{r, tidy = FALSE}
+7 %% 3 # modular (residual)
+2 ^ 6 # power
+(2 + 5) * 4 + 2 ^ 3 # note the order of calculation
+```
+
+## Object
+
+- In R, we store information as an **object**. Once we create an object, we can refer it to its name.
+
+\smallskip
+
+- We assign values to an object using the assignment operator `<-`.
+
+    - We can also use `=` for assignment (although not recommended)
+    
+\smallskip
+
+- Object class/type
+
+    - what kind of information is stored in the object and how it is stored
+    
+    - `typeof()` or `class()` command to see the object type
+    
+## Object Class/Type
+
+- Data types
+
+    - **Character**: character strings
+    
+    - **Numeric**: numbers
+    
+    - **Logical**: boolean data (`TRUE`/`FALSE`)
+
+\smallskip
+
+- Data structures
+
+    - **Vector**: a single-dimension sequence of data of the same type
+    
+    - **Matrix**: a two-dimension sequence of data of the same type
+    
+    - **Data Frame**: a two-dimension structure of data of varying data types
+
+## Object: Example
+
+```{r, echo = TRUE, tidy = FALSE}
+# Numeric vector
+num <- c(4, 2, 6, 8, 5) 
+# Character vector
+program.lang <- c("R", "Python", "C", "Java")
+# Logical vector
+comparison <- (num >= 5)
+comparison
+```
+
+## Object: Example (cont.)
+
+```{r, echo = TRUE, tidy = FALSE}
+# Object class/type
+class(num)
+class(program.lang)
+class(comparison)
+```
+
+## Logical Operators
+
+Operator | Meaning
+--- | ---
+`>` | greater than
+`<` | less than
+`>=` | greater than or equal to
+`<=` | less than or equal to
+`==` | equal to
+`!=` | not equal to
+`|` | or
+`&` | and
+
+## Logical Operators: Example
+
+```{r, tidy = FALSE}
+7 < 5
+(6 > 4) | (8 < 5)
+(7 > 3) & (9 <= 11)
+```
+
+## Command/Function
+
+- We use a command/function to perform some tasks on an object/objects
+
+
+- Argument: the definitions, directions, or objects that are passed to a command/function
+
+
+- If we specify multiple arguments, 
+
+    - separate the arguments by commas
+    
+    - it is desirable to specify them along with their names unless they are obvious
+
+        - The code looks like `funcname(arg1 = input1, arg2 = input2)`
+
+- We can access to function help files either by `?funcname` or `help("funcname")`
+
+    - However, it is often difficult to understand what the help files are saying...
+    
+    - Google search, ask others (including me!)...
+
+## Command/Function: Example
+
+```{r, tidy = FALSE}
+log(num)
+sqrt(num)
+length(num)
+sum(num)
+```
+
+## Command/Function: Example (cont.)
+
+```{r, tidy = FALSE}
+sort(num)
+sort(num, decreasing = FALSE)
+```
+
+
+## Command/Function: Example (cont.)
+
+- Output of `help("sort")`
+
+![Output of `help("sort")`](help_example.png)
+
+## Tommorrow 
+
+- Working with vectors and matrices with R
