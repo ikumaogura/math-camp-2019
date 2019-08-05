@@ -3,6 +3,7 @@ title: 'R Lab 3: Matrix Algebra with R'
 author: "Ikuma Ogura"
 institution: "Georgetown University"
 date: "August 22, 2019"
+fontsize: 10pt
 output: 
   beamer_presentation:
     theme: Boadilla
@@ -154,7 +155,6 @@ Command | Meaning
 - For vectors: `vectorname[i]` extracts the $i$th element of the vector
 
     - We can put in a vector within `[]` to extract multiple elements
-    
     - If we specify negative numbers within `[]`, R deletes corresponding elements
 
 \smallskip
@@ -162,7 +162,6 @@ Command | Meaning
 - For matrices: `matrixname[i, j]` extracts the element in $i$th row and $j$th column
 
     - `matrixname[i,]` extracts all the elements in $i$th row as a vector
-    
     - `matrixname[, j]` extracts all the elements in $j$th column as a vector
 
 ## Accessing to Vector/Matrix Elements: Example
@@ -225,9 +224,7 @@ apply(C, 2, prod)
 - Introduction to
 
     - loading data into R
-
-    - summarizing data with R
-
     - data preprocessing with R
+    - summarizing data with R
 
 

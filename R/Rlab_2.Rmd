@@ -3,6 +3,7 @@ title: 'R Lab 2: Working with Objects and Functions'
 author: "Ikuma Ogura"
 institution: "Georgetown University"
 date: "August 21, 2019"
+fontsize: 10pt
 output: 
   beamer_presentation:
     theme: Boadilla
@@ -58,7 +59,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - Object class/type
 
     - what kind of information is stored in the object and how it is stored
-    
     - `typeof()` or `class()` command to see the object type
     
 ## Object Class/Type
@@ -66,20 +66,18 @@ knitr::opts_chunk$set(echo = TRUE)
 - Data types
 
     - **Character**: character strings
-    
     - **Numeric**: numbers
-    
     - **Logical**: boolean data (`TRUE`/`FALSE`)
+    - *Factor*
 
 \smallskip
 
 - Data structures
 
     - **Vector**: a single-dimension sequence of data of the same type
-    
     - **Matrix**: a two-dimension sequence of data of the same type
-    
     - **Data Frame**: a two-dimension structure of data of varying data types
+    - *List*
 
 ## Object: Example
 
@@ -114,6 +112,8 @@ Operator | Meaning
 `!=` | not equal to
 `|` | or
 `&` | and
+`is.na()` | `TRUE` if missing
+`!is.na()` | `FALSE` if missing
 
 ## Logical Operators: Example
 
@@ -127,22 +127,23 @@ Operator | Meaning
 
 - We use a command/function to perform some tasks on an object/objects
 
+\smallskip
 
 - Argument: the definitions, directions, or objects that are passed to a command/function
 
+\smallskip
 
 - If we specify multiple arguments, 
 
     - separate the arguments by commas
-    
     - it is desirable to specify them along with their names unless they are obvious
-
         - The code looks like `funcname(arg1 = input1, arg2 = input2)`
+
+\smallskip
 
 - We can access to function help files either by `?funcname` or `help("funcname")`
 
-    - However, it is often difficult to understand what the help files are saying...
-    
+    - However, it is often difficult to understand what the help files are saying..
     - Google search, ask others (including me!)...
 
 ## Command/Function: Example
