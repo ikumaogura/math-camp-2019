@@ -219,7 +219,7 @@ apply(A, 1, sum)
 apply(C, 2, prod)
 ```
 
-## Tommorrow
+## Tomorrow
 
 - Introduction to
 

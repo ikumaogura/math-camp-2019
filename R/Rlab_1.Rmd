@@ -164,7 +164,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![Example](Glossary_example_1.png)
     
-## Homework & Tommorow
+## Homework & Tomorrow
 
 - Homework
 
@@ -172,7 +172,7 @@ knitr::opts_chunk$set(echo = TRUE)
     
 \smallskip
 
-- Tommorow
+- Tomorrow
 
     - Working with objects and functions
     - Please bring your laptop to the class!

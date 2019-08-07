@@ -169,6 +169,6 @@ sort(num, decreasing = FALSE)
 
 ![Output of `help("sort")`](help_example.png)
 
-## Tommorrow 
+## Tomorrow 
 
 - Working with vectors and matrices with R
