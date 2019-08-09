@@ -836,4 +836,64 @@ Similarly, the values of the variable $x$ which minimize the function $f(x)$ is 
 \end{minipage}
 \end{frame}
 
+\begin{frame}
+\frametitle{Optimization: Second Order Condition (cont.)}
+\begin{itemize}
+\item \textbf{Second order condition}: when $f'(x_0) = 0$,
+ \begin{itemize}
+ \item if $f''(x_0) < 0$ (i.e., $f(x)$ is concave in an interval containing $x_0$), the point $(x_0, f(x_0))$ is the \textbf{local maximum}
+ \item if $f''(x_0) > 0$ (i.e., $f(x)$ is convex in an interval containing $x_0$), the point $(x_0, f(x_0))$ is the \textbf{local minimum}
+ \end{itemize}
+\vspace{0.4cm}
+\item When $f''(x_0) = 0$?
+ \begin{itemize}
+ \item e.g., $f(x) = x^3$
+ \item Need to look at higher order derivatives
+ \item (You rarely encounter these cases. No worries!)
+ \end{itemize}
+\vspace{0.4cm}
+\item To see whether $x_0$ is also a global maximum/minimum,
+ \begin{itemize}
+ \item if the domain is bounded, check the values of $f(x)$ at the boundaries
+ \item examine the signs of $f'(x)$ (and $f''(x)$) $\rightarrow$ detect the shape of the curve in the entire domain
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimization: Example}
+\begin{itemize}
+\item Find all the extrema (local and global) of $f(x) = x^3 - x^2 \ (x \in [-1, 1])$, and state whether each extremum is a minimum or maximum and whether each is only local or global on that domain.
+ \begin{itemize}
+ \item Answer: First calculate $f'(x)$ and set it to 0,
+  \begin{eqnarray}
+  f'(x) = 3x^2 - 2x = x(3x - 2) &=& 0 \notag \\
+  &\Rightarrow& x = 0, \frac{3}{2} \notag
+  \end{eqnarray}
+ Then compute $f''(x)$ and evaluate these points.
+  \begin{eqnarray}
+  && f''(x) = 6x - 2 \notag \\
+  &\Rightarrow& f''(0) < 0, f''(\frac{3}{2}) > 0 \notag
+  \end{eqnarray}
+ Finally evalute $f(x)$ at these points and boundary points, revealing that $(-1, -2)$ is the global minimum, $(\frac{3}{2}, -\frac{4}{27})$ is the local minimum, $(0 ,0 )$ and $(1, 0)$ are the global maxima.
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimization: Exercises}
+\begin{itemize}
+\item Find all the extrema (local and global) of the following functions on the specified domains, and state whether each extremum is a minimum or maximum and whether each is only local or global on that domain.
+ \begin{enumerate}
+ \item $f(x) = x^3 - x + 1, \ \ (x \in [0, 1])$
+ \item $f(x) = x^3 - 3x, \ \ (x \in [-2, 2])$
+ \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taylor Series Expansion/Approximation}
+
+\end{frame}
+
 \end{document}
