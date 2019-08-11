@@ -1,0 +1,930 @@
+\documentclass[pdflatex, 12pt]{beamer}
+\usetheme{Boadilla}
+\usefonttheme{professionalfonts}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+%\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{wasysym}
+\usepackage{setspace}
+
+%\setbeamerfont{title}{series=\bfseries}
+%\setbeamerfont{frametitle}{series=\bfseries}
+
+%\setbeamercolor{title}{fg=violet}
+%\setbeamercolor{frametitle}{fg=violet}
+
+%\setbeamercolor{palette primary}{fg=black, bg=violet!50}
+%\setbeamercolor{palette secondary}{fg=violet, bg=white}
+%\setbeamercolor{palette tertiary}{fg=black, bg=violet!70}
+
+\setbeamertemplate{navigation symbols}{}
+
+%\setbeamertemplate{itemize item}{\color{violet}$\bullet$}
+%\setbeamertemplate{itemize subitem}{\color{violet}\scriptsize{$\blacktriangleright$}}
+%\setbeamertemplate{itemize subsubitem}{\color{violet}$\star$}
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{itemize subitem}{\scriptsize{$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{$\star$}
+
+\setbeamertemplate{enumerate items}[default]
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\title[Math Camp]{Day 3: Calculus 2}
+\author[Ikuma Ogura]{Ikuma Ogura}
+\institute[Georgetown]{Ph.D. student, Department of Government, Georgetown University}
+\date[August 21, 2019]{August 21, 2019}
+
+\begin{document}
+
+\begin{frame}
+\frametitle{}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Today}
+\begin{itemize}
+\item Today
+ \begin{itemize}
+ \item Partial derivative
+ \item Integral
+  \begin{itemize}
+  \item Definition
+  \item Calculation rules
+  \item Calculation techniques
+  \end{itemize}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative}
+\begin{itemize}
+\item What to do when there are more than one variables?
+\vspace{0.4cm}
+\item \textbf{Partial derivative} of a function with more than one variable is defined as the derivative with respect to one of those variables with others held constant.
+\vspace{0.4cm}
+\item Formally, the partial derivative of $f(x_1, x_2, \cdots, x_n)$ with respect to $x_i$ is defined as
+ {\scriptsize
+ \begin{equation} 
+ \frac{\partial f}{\partial x_i} (x_1, x_2, \cdots, x_n) = \lim_{h \to 0} \frac{f(x_1, x_2, \cdots, x_i + h, \cdots, x_n) - f(x_1, x_2, \cdots, x_i, \cdots, x_n)}{h} \notag
+ \end{equation}  
+ }
+\vspace{0.2cm}
+\item As in the case of derivative of univariate functions, we can take higher-order derivatives. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Example}
+\begin{itemize}
+\item Let $f(x, y) = 3x^2y + 2y^3$. Then,
+ \begin{eqnarray}
+ \frac{\partial f}{\partial x}(x, y) &=& (3x^2y)' + (2y^3)' \notag \\
+ &=& 3y \cdot (x^2)' = 6xy \notag 
+ \end{eqnarray}
+ and 
+ \begin{eqnarray}
+ \frac{\partial f}{\partial y}(x, y) &=& (3x^2y)' + (2y^3)' \notag \\
+ &=& 3x^2 \cdot (y)' + 2 \cdot (y^3)' = 3x^2 + 6y^2 \notag 
+ \end{eqnarray}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Example (cont.)}
+\begin{itemize}
+\item We can take second second-order derivative as
+ \begin{eqnarray}
+ \frac{\partial^2 f}{\partial x^2}(x, y) &=& \frac{\partial}{\partial x} \Big(\frac{\partial}{\partial x} f(x, y)\Big) \notag \\
+ &=& (6xy)' = 6y \cdot (x)' = 6y \notag 
+ \end{eqnarray}
+ and
+ \begin{eqnarray}
+ \frac{\partial^2 f}{\partial y^2}(x, y) &=& \frac{\partial}{\partial y} \Big(\frac{\partial}{\partial y} f(x, y)\Big) \notag \\
+ &=& (3x^2)' + (6y^2)' = 6 \cdot (y^2)' = 12y \notag 
+ \end{eqnarray}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Example (cont.)}
+\begin{itemize}
+\item We can also take second-order \textbf{mixed derivative} as
+ \begin{eqnarray}
+ \frac{\partial^2 f}{\partial x \partial y}(x, y) &=& \frac{\partial}{\partial x} \Big(\frac{\partial}{\partial y} f(x, y)\Big) \notag \\
+ &=& (3x^2)' + (6y^2)' = 3 \cdot (x^2) = 6x \notag 
+ \end{eqnarray}
+\vspace{0.2cm}
+\item The order of differentiation does not matter:
+ \begin{eqnarray}
+ \frac{\partial^2 f}{\partial x \partial y}(x, y) &=& \frac{\partial}{\partial y} \Big(\frac{\partial}{\partial x} f(x, y)\Big) \notag \\
+ &=& (6xy)' = 6x \cdot (y)' = 6x \notag 
+ \end{eqnarray}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Example (cont.)}
+\begin{itemize}
+\item Let $f(x, y) = 3x^3y^2 - 3xy^2 - \sqrt{y} + x$. Then calculate the following partial derivatives.
+ \begin{enumerate}
+ \item $\frac{\partial f}{\partial x} (x, y)$
+ \vspace{0.1cm}
+ \item $\frac{\partial f}{\partial y} (x, y)$
+ \vspace{0.1cm}
+ \item $\frac{\partial^2 f}{\partial x^2} (x, y)$
+ \vspace{0.1cm}
+ \item $\frac{\partial^2 f}{\partial y^2} (x, y)$
+ \vspace{0.1cm}
+ \item $\frac{\partial^2 f}{\partial x \partial y} (x, y)$
+ \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Application}
+\begin{itemize}
+\item Same as the univariate case, partial derivative stand for the \textbf{rate of change} of a function.
+\vspace{0.4cm}
+\item Application examples
+ \begin{itemize}
+ \item \textbf{Marginal effects}
+  \begin{itemize}
+  \item How much does the value of $y$ change due to a one-unit change in $x$?
+  \item e.g., $y = \alpha + \beta_1 x + \beta_2 z + \beta_3 xz$  
+  \end{itemize}
+ \item \textbf{Multivariate optimization}
+ \end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Visual Explanation}
+\begin{itemize}
+\item For a point on a graph of a function with more than one input, there are an infinite number of tangent lines.
+\vspace{0.4cm}  
+\item Then how do we determine the rate of change of the function?
+\vspace{0.4cm}
+\item Partial derivative of $y = f(x_1, x_2, \cdots, x_n)$ with regard to $x_i$ computes the rate of change by finding the slope of a tangent line parallel to the $x_{i}y$-plane.
+\vspace{0.4cm}
+\item Let's take a look at an example of a function with two independent variables.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Visual Explanation (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[scale = 0.7]{fig3_11.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Let $z = f(x, y) = x^2 + xy + y^2$
+\vspace{0.4cm}
+\item $\frac{\partial f}{\partial x} (x, y) = 2x + y$ describes how slope of the tangent lines paralell to the $xz$-plane changes with values of $x$ and $y$
+\vspace{0.4cm}
+\item It is same as
+ \begin{itemize}
+ \item first slicing the graph at a specific value of $y = y_0$
+ \item then finding the slope of a tangent line on the sliced plane
+ \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partial Derivative: Visual Explanation (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[scale = 0.7]{fig3_11.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering
+\only<1>{\includegraphics[scale = 0.5]{fig3_12.png}}
+\only<2>{\includegraphics[scale = 0.5]{fig3_13.png}}
+\only<3>{\includegraphics[scale = 0.5]{fig3_14.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization}
+\begin{itemize}
+\item How to find local minima/maxima for functions with several inputs?
+\vspace{0.4cm}
+\item Let's again use an example of a function $f(x, y)$ with two independent variables.
+\vspace{0.4cm}
+\item At a local minimum/maximum, slope of the tangent lines on a $xz$-plane and a $yz$-place must be 0! 
+\vspace{0.4cm}
+\item Therefore, we need to solve the system of equations
+ \begin{eqnarray}
+ \begin{cases}
+ \frac{\partial f}{\partial x} (x, y) = 0 \\
+ \frac{\partial f}{\partial y} (x, y) = 0 \notag
+ \end{cases}
+ \end{eqnarray} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization (cont.)}
+\begin{itemize}
+\item By extending the logic, to find local minimum/maximum of a function $f(x_1, x_2, \cdots, x_n)$, we need to solve the system of equations
+ {\normalsize
+ \begin{eqnarray}
+ \begin{cases}
+ \frac{\partial f}{\partial x_1} (x_1, x_2, \cdots, x_n) = 0 \\
+ \frac{\partial f}{\partial x_2} (x_1, x_2, \cdots, x_n) = 0 \\
+ \ \ \vdots \\
+ \frac{\partial f}{\partial x_i} (x_1, x_2, \cdots, x_n) = 0 \\
+ \ \ \vdots \\
+ \frac{\partial f}{\partial x_n} (x_1, x_2, \cdots, x_n) = 0 \notag
+ \end{cases}
+ \end{eqnarray}
+ }
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization (cont.)}
+\begin{itemize}
+\item Second order condition?
+ \begin{itemize}
+ \item Distinguishing local maxima/minima is much harder in a multivariate case.
+ \item We'll briefly touch on this issue tomorrow.
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[scale = 0.6]{fig3_15.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item We often want to know the relationship between one variable ($x$) and another ($y$).
+ \begin{itemize}
+ \item e.g., GRE score and grades in graduate school
+ \item Notation
+  \begin{itemize}
+  \item Total number of observations/points: $n$
+  \item Denote each observation/point as $(x_1, y_1), (x_2, y_2),$ $\cdots, (x_n, y_n)$
+  \end{itemize}
+ \end{itemize}
+\vspace{0.4cm}
+\item Let's consider drawing a line that best fit the data.
+ \begin{itemize}
+ \item $y = a + bx$
+ \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[scale = 0.6]{fig3_16.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item \textbf{Ordinary Least Square (OLS)}: find a line which minimizes the sum of squared residuals
+\vspace{0.4cm}
+\item What is a residual?
+ \begin{itemize}
+ \item Distance between the line and each point.
+ \end{itemize}
+\vspace{0.4cm}
+\item Residual for point $(x_i, y_i)$:
+ \begin{itemize}
+ \item A point on a line at $x = x_i$: $(x_i, a + bx_i)$
+ \item Therefore, a residual for point $(x_i, y_i)$ is $y_i - (a + bx_i)$
+ \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[scale = 0.6]{fig3_16.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Residual for observation $i$
+ \begin{equation}
+ y_i - (a + bx_i) \notag
+ \end{equation}
+\item Squared residual for observation $i$
+ \begin{equation}
+ \left\{y_i - (a + bx_i)\right\}^2 \notag
+ \end{equation}
+\item Sum of squared residuals
+ \begin{equation}
+ \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 \notag
+ \end{equation}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example (cont.)}
+\begin{itemize}
+\item Let's find the values of $a$ and $b$ which minimize the sum of squared residuals.
+ \begin{equation}
+ \operatorname*{argmax}_{a, b} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 \notag
+ \end{equation}
+\item Following the discussion so far, we need to solve the system of equations
+ \begin{eqnarray}
+ \begin{cases}
+ \frac{\partial}{\partial a} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 = 0 \\
+ \frac{\partial}{\partial b} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 = 0 \notag
+ \end{cases}
+ \end{eqnarray}
+\item NB: Here we treat $a$ and $b$ as variables and $x_i$s and $y_i$s and as constant!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example (cont.)}
+\begin{itemize}
+\item Let's compute the partial derivatives.
+\end{itemize}
+{\footnotesize
+\begin{eqnarray}
+&& \frac{\partial}{\partial a} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 \notag \\
+&=& \frac{\partial}{\partial a} \big(\left\{y_1 - (a + bx_1)\right\}^2 + \left\{y_2 - (a + bx_2)\right\}^2 \cdots + \left\{y_n - (a + bx_n)\right\}^2 \big) \notag \\
+&=& \frac{\partial}{\partial a} \left\{y_1 - (a + bx_1)\right\}^2 + \frac{\partial}{\partial a} \left\{y_2 - (a + bx_2)\right\}^2 + \cdots + \frac{\partial}{\partial a} \left\{y_n - (a + bx_n)\right\}^2 \notag \\
+&=& -2\left\{y_1 - (a + bx_1)\right\} - 2\left\{y_2 - (a + bx_2)\right\} - \cdots - 2\left\{y_n - (a + bx_n)\right\} \notag \\
+&=& -2\big(\left\{y_1 - (a + bx_1)\right\} + \left\{y_2 - (a + bx_2)\right\} + \cdots + \left\{y_n - (a + bx_n)\right\}\big) \notag \\
+&=& -2 \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\} \notag
+\end{eqnarray}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example (cont.)}
+and
+{\footnotesize
+\begin{eqnarray}
+&& \frac{\partial}{\partial b} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 \notag \\
+&=& \frac{\partial}{\partial b} \big(\left\{y_1 - (a + bx_1)\right\}^2 + \left\{y_2 - (a + bx_2)\right\}^2 \cdots + \left\{y_n - (a + bx_n)\right\}^2 \big) \notag \\
+&=& \frac{\partial}{\partial b} \left\{y_1 - (a + bx_1)\right\}^2 + \frac{\partial}{\partial b} \left\{y_2 - (a + bx_2)\right\}^2 + \cdots + \frac{\partial}{\partial b} \left\{y_n - (a + bx_n)\right\}^2 \notag \\
+&=& -2x_1\left\{y_1 - (a + bx_1)\right\} - 2x_2\left\{y_2 - (a + bx_2)\right\} - \cdots - 2x_n\left\{y_n - (a + bx_n)\right\} \notag \\
+&=& -2\big(x_1\left\{y_1 - (a + bx_1)\right\} + x_2\left\{y_2 - (a + bx_2)\right\} + \cdots + x_n\left\{y_n - (a + bx_n)\right\}\big) \notag \\
+&=& -2 \sum_{i = 1}^{n} x_i\left\{y_i - (a + bx_i)\right\} \notag
+\end{eqnarray}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization: Example (cont.)}
+\begin{itemize}
+\item The system of equation
+ \begin{eqnarray}
+ \begin{cases}
+ -2 \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\} = 0 \\
+ -2 \sum_{i = 1}^{n} x_i\left\{y_i - (a + bx_i)\right\} = 0 \notag
+ \end{cases}
+ \end{eqnarray}
+is called the \textbf{normal equation}. 
+\vspace{0.4cm}
+\item Rest is to solve the system of equations above!
+ \begin{itemize}
+ \item which you are asked to do in GOVT 701...
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integral}
+\begin{itemize}
+\item What is an integral?
+ \begin{enumerate}
+ \item \textbf{Antiderivative}
+  \begin{itemize}
+  \item inverse of a derivative
+  \end{itemize}
+ \item \textbf{Area under the curve}
+ \end{enumerate}
+\vspace{0.4cm}
+\item \textbf{Fundamental theory of calculus} connects these two explanations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Indefinite Integral}
+\begin{itemize}
+\item \textbf{Antiderivative} or \textbf{indefinite integral} of a function $f(x)$, often denoted as $F(x)$, is a function whose derivative is equal to the riginal function $f(x)$. Formally,
+ \begin{equation}
+ F'(x) = f(x) \notag 
+ \end{equation} 
+\item Indefinite integral of $f(x)$ is also written as 
+ \begin{equation}
+ \int f(x) dx, \notag 
+ \end{equation}
+which is equal to $F(x)$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Indefinite Integral (cont.)}
+\begin{itemize}
+\item Example: The function $F(x) = x^3$ is an antiderivative of $f(x) = 3x^2$, since $F'(x) = f(x)$.
+\vspace{0.4cm}
+\item However, this is not the only antiderivative.
+ \begin{itemize}
+ \item $F(x) = x^3 + 1$
+ \item $F(x) = x^3 + 100$
+ \item $F(x) = x^3 - 23$
+ \item $F(x) = x^3 - 1108564$
+ \item $\cdots$
+ \end{itemize}
+\vspace{0.4cm}
+\item Since the derivative of a constant is 0, there are infinite number of antiderivatives!
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Indefinite Integral (cont.)}
+\begin{itemize}
+\item To represent this situation, we add an arbitrary constant, $C$, known as the \emph{constant of integration}.
+\vspace{0.4cm}
+\item Example: antiderivative of $f(x) = 3x^2$ is 
+ \begin{equation}
+ F(x) = x^3 + C \notag
+ \end{equation}
+ \begin{itemize}
+ \item All values of $F(x)$ can be obtained by changing the values of $C$.
+ \end{itemize}
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Definite Integral}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale = 0.6]{fig3_1.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Suppose we want to find the area under the curve defined by a function $f(x)$ and some interval $x \in [a, b]$.
+\vspace{0.4cm}
+\item Let's approximinate the area with a seris of rectangles.
+ \begin{itemize}
+ \item First partition the interval into $n$ regions.
+ \item Let the length of each subinterval be $\Delta x$
+ \item Denote the mid-points of subintervals as $x_1, x_2, \cdots, x_n$ 
+ \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definite Integral (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\only<1>{\includegraphics[scale = 0.6]{fig3_2.pdf}}
+\only<2>{\includegraphics[scale = 0.6]{fig3_3.pdf}}
+\only<3>{\includegraphics[scale = 0.6]{fig3_4.pdf}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Area of first rectangle: $f(x_1) \Delta x$
+\vspace{0.4cm}
+\item Area of second rectangle: $f(x_2) \Delta x$
+\vspace{0.4cm}
+\item $\cdots$
+\vspace{0.4cm}
+\item Add area of all the rectangles (\textbf{Riemann sum}):
+ \begin{equation}
+ \sum_{i = 1}^{n} f(x_i) \Delta x \notag
+ \end{equation}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definite Integral (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\only<1>{\includegraphics[scale = 0.6]{fig3_4.pdf}}
+\only<2>{\includegraphics[scale = 0.6]{fig3_5.pdf}}
+\only<3>{\includegraphics[scale = 0.6]{fig3_6.pdf}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item By making $\Delta x$ smaller and smaller (i.e., partitioning the interval $[a,b]$ into smaller regions)...
+\vspace{0.4cm}
+\item We can approximate the area closer and closer!
+\vspace{0.4cm}
+\item Formally stated, we can find the area under the curve by taking the limit of the Riemann sum as $\Delta x \to 0$:
+ \begin{equation}
+ \lim_{\Delta x \to 0} \sum_{i = 1}^{n} f(x_i) \Delta x \notag
+ \end{equation}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definite Integral (cont.)}
+\begin{itemize}
+\item \textbf{Riemann integral}/\textbf{Definite integral} of function $f(x)$ from $a$ to $b$ is defined as the limit of Riemann sum of $f(x)$ on that interval as $\Delta x \to 0$ and denoted as 
+ \begin{equation}
+ \int^b_a f(x)dx = \lim_{\Delta x \to 0} \sum_{i = 1}^{n} f(x_i) \Delta x \notag
+ \end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus}
+\begin{itemize}
+\item (Second) \textbf{Fundamental Theorem of Calculus}: Let $f(x)$ be a function on an interval $[a, b]$, and $F(x)$ be an antiderivative of $f(x)$ on $[a, b]$. Then,
+ \begin{equation}
+ \int^b_a f(x)dx = F(b) - F(a) \notag
+ \end{equation}
+\item Therefore, we can calcuate the definite integral (i.e., area under the curve) from $b$ and $a$ by substracting the indefinite integral evaluated at $a$ from the indefinite integral evaluated at $b$! 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale = 0.6]{fig3_7.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item But why?
+\vspace{0.4cm}
+\item Let $S(b)$ be a function representing the area under the curve defined by the function $f(x)$ and interval $x \in [a, b]$.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[scale = 0.6]{fig3_8.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Let's consider how much the area changes if we move rightward from $b$ by $h$.
+\vspace{0.4cm}
+\item The area shown in blue can computed as $S(b + h) - S(b)$
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus (cont.)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\only<1>{\includegraphics[scale = 0.6]{fig3_9.pdf}}
+\only<2>{\includegraphics[scale = 0.6]{fig3_10.pdf}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\item Here let's assume that $f(x)$ is increasing around $b$.
+\vspace{0.4cm}
+\item Then, as we can see from the figure, $S(b + h) - S(b)$ is larger than $f(b)h$ and smaller than $f(b + h)h$. Dividing each by $h$, we get
+ {\footnotesize
+ \begin{equation}
+ f(b) < \frac{S(b + h) - S(b)}{h} < f(b + h) \notag
+ \end{equation}
+ }
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus (cont.)}
+\begin{itemize}
+\item Take the limit of each as $h \to 0$.
+ \begin{equation}
+ \lim_{h \to 0} f(b) < \lim_{h \to 0} \frac{S(b + h) - S(b)}{h} < \lim_{h \to 0} f(b + h) \notag
+ \end{equation}
+\vspace{0.1cm}
+\item Since $\lim_{h \to 0} f(b) = \lim_{h \to 0} f(b + h) = f(b)$, 
+ \begin{equation}
+ \lim_{h \to 0} \frac{S(b + h) - S(b)}{h} = f(b) \notag
+ \end{equation}
+\vspace{0.1cm}
+\item From the definition of derivative, 
+ \begin{equation}
+ S'(b) = f(b) \notag
+ \end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus (cont.)}
+\begin{itemize}
+\item Find the antiderivative of both:
+ \begin{equation}
+ S(b) = F(b) + C \notag
+ \end{equation}
+\vspace{0.1cm}
+\item Since $S(a) = 0$, $C = -F(a)$. Therefore,
+ \begin{equation}
+ S(b) = F(b) - F(a) \notag
+ \end{equation}
+\vspace{0.1cm}
+\item We can compute the area under the curve by calculating the differences in indefinite integrals!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rules of Integration}
+\begin{itemize}
+\item Common rules of integration
+ \begin{enumerate}
+ \item \textbf{Linearity}: $\int \left\{\alpha f(x) + \beta g(x) \right\}dx = \alpha \int f(x)dx + \beta \int g(x)dx$
+ \vspace{0.1cm}
+ \item \textbf{Reverse power rule}: $\int x^n dx = \frac{1}{n + 1} x^{n + 1} + C \ (n \neq -1)$
+ \vspace{0.1cm}
+ \item Exception to 2. when $n = -1$: $\int \frac{1}{x} dx = \log x + C$
+ \vspace{0.1cm}
+ \item \textbf{Exponential rule}: $\int a^x dx = \frac{a^x}{\log a} + C$
+ \vspace{0.1cm}
+ \item Special case of 4.: $\int e^x dx = e^x + C$
+ \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rules of Integration (cont.)}
+\begin{itemize}
+\item Definite integral $\int^b_a f(x) dx$:
+ \begin{enumerate}
+ \item Find the indefinite integral $F(x)$
+ \item Calculate $F(b) - F(a)$
+ \end{enumerate}
+ \begin{itemize}
+ \item We often write the second step as $\int^b_a f(x) dx = F(x)|^b_a$
+ \end{itemize}
+\vspace{0.4cm}
+\item Common rules for definite integral
+ \begin{enumerate}
+ \item $\int^a_a f(x) dx = 0$
+ \item $\int^b_a f(x) dx = -\int^a_b f(x) dx$
+ \item $\int^b_a f(x) dx = \int_a^c f(x) dx + \int^b_c f(x) dx \ (c \in [a, b])$
+ \item $\int^b_a \left\{\alpha f(x) + \beta g(x)\right\} dx = \alpha \int^b_a f(x) dx + \beta \int^b_a g(x) dx$
+ \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rules of Integration: Example}
+\begin{itemize}
+\item Find the antiderivative of $f(x) = 3x^3 - 4x^2 + x + 6$
+\vspace{0.4cm}
+ \begin{itemize}
+ \item Answer:
+  \begin{eqnarray}
+  \int f(x) dx &=& \int (3x^3 - 4x^2 + x + 6)dx \notag \\
+  &=& \int (3x^3) dx + \int (-4x^2) dx + \int (x)dx + \int (6)dx \notag \\
+  &=& \frac{3}{4}x^4 - \frac{4}{3}x^3 + \frac{1}{2}x^2 + 6x + C \notag
+  \end{eqnarray}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rules of Integration: Example (cont.)}
+\begin{itemize}
+\item Calculate the definite integral $\int^4_{-1} (3x^2 + 2x - 1)dx$
+\vspace{0.4cm}
+ \begin{itemize}
+ \item Answer:
+  \begin{eqnarray}
+  && \int^4_{-1} (3x^2 + 2x - 1)dx \notag \\
+  &=& 3\int^4_{-1} x^2 dx + 2\int^4_{-1} x dx - \int^4_{-1} (1)dx \notag \\
+  &=& 3 \cdot \frac{1}{3} x^3|^4_{-1} + 2 \cdot \frac{1}{2} x^2|^4_{-1} - x|^4_{-1} \notag \\
+  &=& \left\{64 - (-1)\right\} + (16 - 1) - \left\{4 - (-1)\right\} \notag \\
+  &=& 65 + 15 - 5 = 75. \notag
+  \end{eqnarray}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rules of Integration: Exercises}
+\begin{enumerate}
+\item Calculate the following integrals.
+ \begin{enumerate}
+ \item $\int (4x^5 + 2x^2 + 5)dx$
+ \item $\int (\sqrt{x} + 2x^3)dx$
+ \item $\int (3x^{\frac{3}{2}} + 4^{x})dx$
+ \item $\int^2_{-2} (3x^2 + x)dx$
+ \item $\int^4_2 (3x^2 + x + 5)dx$
+ \item $\int^{16}_1 (5x^{\frac{3}{2}} - 2x^{-\frac{5}{4}})dx$
+ \end{enumerate}
+\vspace{0.4cm}
+\item Find the area intersected by $f(x) = x^2 - 3x + 3$ and $g(x) = -x^2 + 5x + 13$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration Techniques}
+\begin{enumerate}
+\item Integration by parts
+\vspace{0.4cm}
+\item Integration by substitution
+\vspace{0.4cm}
+\item L'Hopital's rule
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration by Parts}
+\begin{itemize}
+\item If the integrand $h(x)$ can be represented as the product of two functions, $f(x)$ and $g'(x)$, then 
+ \begin{equation}
+ \int h(x) dx = \int f(x)g'(x) dx = f(x)g(x) - \int f'(x)g(x) dx \notag
+ \end{equation} 
+\item In the case of definite integral:
+ \begin{equation}
+ \int^b_a h(x) dx = \int^b_a f(x)g'(x) dx = f(x)g(x)|^b_a - \int^b_a f'(x)g(x) dx \notag
+ \end{equation} 
+\item This formula can easily be derived from the product rule of derivative calculation.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration by Parts: Example}
+\begin{itemize}
+\item Question: find the indefinite integral of $\log(x)$.
+\vspace{0.4cm}
+ \begin{itemize}
+ \item Answer: As $\log(x) = \log(x) \cdot (x)'$,
+  \begin{eqnarray}
+  \int \log(x) dx &=& \int \log(x) \cdot (x)' dx \notag \\
+  &=& x\log(x) - \int \frac{1}{x} \cdot x dx \notag \\
+  &=& x\log(x) - \int (1) dx \notag \\
+  &=& x\log(x) - x + C. \notag
+  \end{eqnarray}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration by Substitution}
+\begin{itemize}
+\item If we can find a function of $t(x)$ and write the integrand $f(x)$ as 
+ \begin{equation}
+ f(x) = f(t) \frac{dt}{dx}, \notag
+ \end{equation}
+we can apply the integration by substitution formula
+ \begin{equation}
+ \int f(x) dx = \int f(t) \frac{dt}{dx} dx = \int f(t) dt \notag
+ \end{equation}
+\item In the case of definite integral: if $t$ moves from $\alpha$ to $\beta$ when $x$ moves from $a$ to $b$, then
+ \begin{equation}
+ \int^b_a f(x) dx = \int^b_a f(t) \frac{dt}{dx} dx = \int^{\beta}_{\alpha} f(t) dt \notag
+ \end{equation}
+ \begin{itemize}
+ \item Note that the interval of integration can change due to the variable transformation.
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration by Substitution: Example}
+\begin{itemize}
+\item Question: find the indefinite integral of $f(x) = 18x^2 \sqrt[3]{6x^3 - 7}$
+\vspace{0.4cm}
+ \begin{itemize}
+ \item Answer: Let $t = 6x^3 - 7$. Then, $\frac{dt}{dx} = 18x^2$. Therefore,
+  \begin{eqnarray}
+  \int f(x) dx &=& \int {\color{red}18x^2} \sqrt[3]{\color{blue} 6x^3 - 7} dx \notag \\
+  &=& \int \sqrt[3]{\color{blue} t} {\color{red} \frac{dt}{dx}} dx \notag \\
+  &=& \int t^{\frac{1}{3}} dt \notag \\
+  &=& \frac{3}{4} t^{\frac{4}{3}} + C \notag \\
+  &=& \frac{3}{4} (6x^3 - 7)^{\frac{4}{3}} + C \notag
+  \end{eqnarray}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration by Substitution: Summary of Steps}
+\begin{enumerate}
+\item Identify some part of $f(x)$ which can be simplified by substituting in a single variable $t$ (which is a function of $x$)
+\item Compute $\frac{dt}{dx}$, and reexpress $f(x)$ using $t$ and $\frac{dt}{dx}$
+\item Solve the indefinite integral
+\item (For indefinite integration) Substitute back in for $x$
+\item (For definite integration) Determine the new interval of integration $[\alpha, \beta]$, and evaluate the antiderivative at the boundary points.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration by Substitution: Another Example}
+\begin{itemize}
+\item Question: find the definite integral $\int^1_0 x\sqrt{x^2 + 1}dx$
+\vspace{0.4cm}
+ \begin{itemize}
+ \item Answer: Let $t = x^2 + 1$. Then, $\frac{dt}{dx} = 2x$. Also, when $x$ moves from $1$ to $0$, $t$ moves from $1$ to $2$. Therefore,
+  \begin{eqnarray}
+  && \int^1_0 {\color{red} x}\sqrt{\color{blue} x^2 + 1}dx \notag \\
+  &=& \int^1_0 \sqrt{\color{blue} t} \cdot {\color{red} \frac{1}{2}\frac{dt}{dx}} dx \notag \\
+  &=& \frac{1}{2} \int^2_1 \sqrt{t} dt \notag \\
+  &=& \frac{1}{2} \cdot \frac{2}{3} t^{\frac{3}{2}}|^2_1 \notag \\
+  &=& \frac{1}{3} (2\sqrt{2} - 1) \notag 
+  \end{eqnarray}
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{L'Hopital's Rule}
+\begin{itemize}
+\item Let's calculate the definite integral $\int^{\infty}_0 xe^{-x} dx$.
+ \begin{eqnarray}
+ \int^{\infty}_0 xe^{-x} dx &=& \int^{\infty}_0 x(-e^{-x})' dx \notag \\
+ &=& -(xe^{-x}|^{\infty}_0)  - \int^{\infty}_0 (x)' \cdot (-e^{-x}) dx \notag \\
+ &=& -(xe^{-x}|^{\infty}_0)  + \int^{\infty}_0 e^{-x} dx \notag
+ \end{eqnarray}
+\item How can we evaluate $xe^{-x}$ at $x \to \infty$?
+ \begin{itemize}
+ \item $\lim_{x \to \infty} \frac{x}{e^x} = \frac{\infty}{\infty}$??
+ \item In such cases, L'Hopital's rule help you circumvent the problem.
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{L'Hopital's Rule (cont.)}
+\begin{itemize}
+\item \textbf{L'Hopital's rule}: Let functions $f(x)$ and $g(x)$ be differentiable at an open interval close to $c$. If $\lim_{x \to c} f(x) = \lim_{x \to c} g(x) = 0$ or $\pm\infty$, and $\lim_{x \to c} \frac{f'(x)}{g'(x)}$ exists,
+ \begin{equation}
+ \lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)} \notag 
+ \end{equation} 
+\vspace{0.1cm}
+\item Applying the L'Hopital's rule, we can see that
+ \begin{equation}
+ \lim_{x \to \infty} \frac{x}{e^x} = \lim_{x \to \infty} \frac{x'}{(e^x)'} = \lim_{x \to \infty} \frac{1}{e^x} = 0 \notag 
+ \end{equation} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Integration Techniques: Exercises}
+\begin{itemize}
+\item Calculate the following integrals.
+ \begin{enumerate}
+ \item $\int \frac{1}{1 + \exp(-x)}$
+ \vspace{0.1cm}
+ \item $\int^3_2 x\exp(x^2)dx$
+ \item $\int^2_1 x\log x dx$
+ \item $\int^1_0 \log (1 + \sqrt{x})dx$ \ (Hint: set $t = 1 + sqrt{x}$ and perform integration by substitution)
+ \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tomorrow}
+\begin{itemize}
+\item Problem set 3 $\rightarrow$ review in the morning
+\vspace{0.4cm}
+\item Tomorrow
+ \begin{itemize}
+ \item Vector and matrix algebra
+ \item Vector/matrix noations for multivariate calculus
+ \item Geometric meanings of vector/matrix algebra
+ \item Moore \& Siegel, Chapters 12, 13, 15.2.2, 15.2.4, \& 16.1
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
