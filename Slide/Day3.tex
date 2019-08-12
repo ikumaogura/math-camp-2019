@@ -104,7 +104,7 @@
 \begin{frame}
 \frametitle{Partial Derivative: Example (cont.)}
 \begin{itemize}
-\item We can take second second-order derivative as
+\item We can take the second-order derivative as
  \begin{eqnarray}
  \frac{\partial^2 f}{\partial x^2}(x, y) &=& \frac{\partial}{\partial x} \Big(\frac{\partial}{\partial x} f(x, y)\Big) \notag \\
  &=& (6xy)' = 6y \cdot (x)' = 6y \notag 
@@ -135,7 +135,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Partial Derivative: Example (cont.)}
+\frametitle{Partial Derivative: Exercises}
 \begin{itemize}
 \item Let $f(x, y) = 3x^3y^2 - 3xy^2 - \sqrt{y} + x$. Then calculate the following partial derivatives.
  \begin{enumerate}
@@ -161,7 +161,7 @@
  \begin{itemize}
  \item \textbf{Marginal effects}
   \begin{itemize}
-  \item How much does the value of $y$ change due to a one-unit change in $x$?
+  \item How much does the value of $y$ change due to one-unit change in $x$?
   \item e.g., $y = \alpha + \beta_1 x + \beta_2 z + \beta_3 xz$  
   \end{itemize}
  \item \textbf{Multivariate optimization}
@@ -224,11 +224,11 @@
 \begin{frame}
 \frametitle{Multivariate Optimization}
 \begin{itemize}
-\item How to find local minima/maxima for functions with several inputs?
+\item How do we find local minima/maxima for functions with several inputs?
 \vspace{0.4cm}
 \item Let's again use an example of a function $f(x, y)$ with two independent variables.
 \vspace{0.4cm}
-\item At a local minimum/maximum, slope of the tangent lines on a $xz$-plane and a $yz$-place must be 0! 
+\item At a local minimum/maximum, slope of the tangent lines on the $xz$-plane and the $yz$-place must be 0! 
 \vspace{0.4cm}
 \item Therefore, we need to solve the system of equations
  \begin{eqnarray}
@@ -243,7 +243,7 @@
 \begin{frame}
 \frametitle{Multivariate Optimization (cont.)}
 \begin{itemize}
-\item By extending the logic, to find local minimum/maximum of a function $f(x_1, x_2, \cdots, x_n)$, we need to solve the system of equations
+\item By extending the logic, to find local minima/maxima of a function $f(x_1, x_2, \cdots, x_n)$, we need to solve the system of equations
  {\normalsize
  \begin{eqnarray}
  \begin{cases}
@@ -289,7 +289,7 @@
   \end{itemize}
  \end{itemize}
 \vspace{0.4cm}
-\item Let's consider drawing a line that best fit the data.
+\item Let's consider drawing a line that best fits the data.
  \begin{itemize}
  \item $y = a + bx$
  \end{itemize}
@@ -309,7 +309,7 @@
 \begin{itemize}
 \item \textbf{Ordinary Least Square (OLS)}: find a line which minimizes the sum of squared residuals
 \vspace{0.4cm}
-\item What is a residual?
+\item What is residual?
  \begin{itemize}
  \item Distance between the line and each point.
  \end{itemize}
@@ -317,7 +317,7 @@
 \item Residual for point $(x_i, y_i)$:
  \begin{itemize}
  \item A point on a line at $x = x_i$: $(x_i, a + bx_i)$
- \item Therefore, a residual for point $(x_i, y_i)$ is $y_i - (a + bx_i)$
+ \item Therefore, residual for point $(x_i, y_i)$ is $y_i - (a + bx_i)$
  \end{itemize}
 \end{itemize}
 \end{column}
@@ -355,7 +355,7 @@
 \begin{itemize}
 \item Let's find the values of $a$ and $b$ which minimize the sum of squared residuals.
  \begin{equation}
- \operatorname*{argmax}_{a, b} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 \notag
+ \operatorname*{argmin}_{a, b} \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\}^2 \notag
  \end{equation}
 \item Following the discussion so far, we need to solve the system of equations
  \begin{eqnarray}
@@ -403,7 +403,7 @@ and
 \begin{frame}
 \frametitle{Multivariate Optimization: Example (cont.)}
 \begin{itemize}
-\item The system of equation
+\item The system of equations
  \begin{eqnarray}
  \begin{cases}
  -2 \sum_{i = 1}^{n} \left\{y_i - (a + bx_i)\right\} = 0 \\
@@ -438,7 +438,7 @@ is called the \textbf{normal equation}.
 \begin{frame}
 \frametitle{Indefinite Integral}
 \begin{itemize}
-\item \textbf{Antiderivative} or \textbf{indefinite integral} of a function $f(x)$, often denoted as $F(x)$, is a function whose derivative is equal to the riginal function $f(x)$. Formally,
+\item \textbf{Antiderivative} or \textbf{indefinite integral} of a function $f(x)$, often denoted as $F(x)$, is a function whose derivative is equal to the original function $f(x)$. Formally,
  \begin{equation}
  F'(x) = f(x) \notag 
  \end{equation} 
@@ -493,7 +493,7 @@ which is equal to $F(x)$.
 \begin{itemize}
 \item Suppose we want to find the area under the curve defined by a function $f(x)$ and some interval $x \in [a, b]$.
 \vspace{0.4cm}
-\item Let's approximinate the area with a seris of rectangles.
+\item Let's approximate the area with a seris of rectangles.
  \begin{itemize}
  \item First partition the interval into $n$ regions.
  \item Let the length of each subinterval be $\Delta x$
@@ -569,7 +569,7 @@ which is equal to $F(x)$.
  \begin{equation}
  \int^b_a f(x)dx = F(b) - F(a) \notag
  \end{equation}
-\item Therefore, we can calcuate the definite integral (i.e., area under the curve) from $b$ and $a$ by substracting the indefinite integral evaluated at $a$ from the indefinite integral evaluated at $b$! 
+\item Therefore, we can calcuate the definite integral (i.e., area under the curve) from $b$ and $a$ by subtracting the indefinite integral evaluated at $a$ from the indefinite integral evaluated at $b$! 
 \end{itemize}
 \end{frame}
 
@@ -673,7 +673,7 @@ which is equal to $F(x)$.
  \vspace{0.1cm}
  \item \textbf{Reverse power rule}: $\int x^n dx = \frac{1}{n + 1} x^{n + 1} + C \ (n \neq -1)$
  \vspace{0.1cm}
- \item Exception to 2. when $n = -1$: $\int \frac{1}{x} dx = \log x + C$
+ \item Exception to 2. when $n = -1$: $\int \frac{1}{x} dx = \log |x| + C$
  \vspace{0.1cm}
  \item \textbf{Exponential rule}: $\int a^x dx = \frac{a^x}{\log a} + C$
  \vspace{0.1cm}
@@ -685,13 +685,13 @@ which is equal to $F(x)$.
 \begin{frame}
 \frametitle{Rules of Integration (cont.)}
 \begin{itemize}
-\item Definite integral $\int^b_a f(x) dx$:
+\item To calculate the definite integral $\int^b_a f(x) dx$:
  \begin{enumerate}
  \item Find the indefinite integral $F(x)$
  \item Calculate $F(b) - F(a)$
  \end{enumerate}
  \begin{itemize}
- \item We often write the second step as $\int^b_a f(x) dx = F(x)|^b_a$
+ \item We often write the second step as $\int^b_a f(x) dx = F(x)\big|^b_a$
  \end{itemize}
 \vspace{0.4cm}
 \item Common rules for definite integral
@@ -713,7 +713,7 @@ which is equal to $F(x)$.
  \item Answer:
   \begin{eqnarray}
   \int f(x) dx &=& \int (3x^3 - 4x^2 + x + 6)dx \notag \\
-  &=& \int (3x^3) dx + \int (-4x^2) dx + \int (x)dx + \int (6)dx \notag \\
+  &=& 3\int x^3 dx - 4\int x^2 dx + \int x dx + 6\int dx \notag \\
   &=& \frac{3}{4}x^4 - \frac{4}{3}x^3 + \frac{1}{2}x^2 + 6x + C \notag
   \end{eqnarray}
  \end{itemize}
@@ -729,8 +729,8 @@ which is equal to $F(x)$.
  \item Answer:
   \begin{eqnarray}
   && \int^4_{-1} (3x^2 + 2x - 1)dx \notag \\
-  &=& 3\int^4_{-1} x^2 dx + 2\int^4_{-1} x dx - \int^4_{-1} (1)dx \notag \\
-  &=& 3 \cdot \frac{1}{3} x^3|^4_{-1} + 2 \cdot \frac{1}{2} x^2|^4_{-1} - x|^4_{-1} \notag \\
+  &=& 3\int^4_{-1} x^2 dx + 2\int^4_{-1} x dx - \int^4_{-1} dx \notag \\
+  &=& 3 \cdot \frac{1}{3} x^3\big|^4_{-1} + 2 \cdot \frac{1}{2} x^2\big|^4_{-1} - x\big|^4_{-1} \notag \\
   &=& \left\{64 - (-1)\right\} + (16 - 1) - \left\{4 - (-1)\right\} \notag \\
   &=& 65 + 15 - 5 = 75. \notag
   \end{eqnarray}
@@ -751,7 +751,7 @@ which is equal to $F(x)$.
  \item $\int^{16}_1 (5x^{\frac{3}{2}} - 2x^{-\frac{5}{4}})dx$
  \end{enumerate}
 \vspace{0.4cm}
-\item Find the area intersected by $f(x) = x^2 - 3x + 3$ and $g(x) = -x^2 + 5x + 13$.
+\item Find the area surrounded by $f(x) = x^2 - 3x + 3$ and $g(x) = -x^2 + 5x + 13$.
 \end{enumerate}
 \end{frame}
 
@@ -775,7 +775,7 @@ which is equal to $F(x)$.
  \end{equation} 
 \item In the case of definite integral:
  \begin{equation}
- \int^b_a h(x) dx = \int^b_a f(x)g'(x) dx = f(x)g(x)|^b_a - \int^b_a f'(x)g(x) dx \notag
+ \int^b_a h(x) dx = \int^b_a f(x)g'(x) dx = f(x)g(x)\big|^b_a - \int^b_a f'(x)g(x) dx \notag
  \end{equation} 
 \item This formula can easily be derived from the product rule of derivative calculation.
 \end{itemize}
@@ -791,7 +791,7 @@ which is equal to $F(x)$.
   \begin{eqnarray}
   \int \log(x) dx &=& \int \log(x) \cdot (x)' dx \notag \\
   &=& x\log(x) - \int \frac{1}{x} \cdot x dx \notag \\
-  &=& x\log(x) - \int (1) dx \notag \\
+  &=& x\log(x) - \int dx \notag \\
   &=& x\log(x) - x + C. \notag
   \end{eqnarray}
  \end{itemize}
@@ -801,7 +801,7 @@ which is equal to $F(x)$.
 \begin{frame}
 \frametitle{Integration by Substitution}
 \begin{itemize}
-\item If we can find a function of $t(x)$ and write the integrand $f(x)$ as 
+\item If we can find a function $t(x)$ and write the integrand $f(x)$ as 
  \begin{equation}
  f(x) = f(t) \frac{dt}{dx}, \notag
  \end{equation}
@@ -854,12 +854,12 @@ we can apply the integration by substitution formula
 \item Question: find the definite integral $\int^1_0 x\sqrt{x^2 + 1}dx$
 \vspace{0.4cm}
  \begin{itemize}
- \item Answer: Let $t = x^2 + 1$. Then, $\frac{dt}{dx} = 2x$. Also, when $x$ moves from $1$ to $0$, $t$ moves from $1$ to $2$. Therefore,
+ \item Answer: Let $t = x^2 + 1$. Then, $\frac{dt}{dx} = 2x$. Also, when $x$ moves from $0$ to $1$, $t$ moves from $1$ to $2$. Therefore,
   \begin{eqnarray}
   && \int^1_0 {\color{red} x}\sqrt{\color{blue} x^2 + 1}dx \notag \\
   &=& \int^1_0 \sqrt{\color{blue} t} \cdot {\color{red} \frac{1}{2}\frac{dt}{dx}} dx \notag \\
   &=& \frac{1}{2} \int^2_1 \sqrt{t} dt \notag \\
-  &=& \frac{1}{2} \cdot \frac{2}{3} t^{\frac{3}{2}}|^2_1 \notag \\
+  &=& \frac{1}{2} \cdot \frac{2}{3} t^{\frac{3}{2}}\big|^2_1 \notag \\
   &=& \frac{1}{3} (2\sqrt{2} - 1) \notag 
   \end{eqnarray}
  \end{itemize}
@@ -872,8 +872,8 @@ we can apply the integration by substitution formula
 \item Let's calculate the definite integral $\int^{\infty}_0 xe^{-x} dx$.
  \begin{eqnarray}
  \int^{\infty}_0 xe^{-x} dx &=& \int^{\infty}_0 x(-e^{-x})' dx \notag \\
- &=& -(xe^{-x}|^{\infty}_0)  - \int^{\infty}_0 (x)' \cdot (-e^{-x}) dx \notag \\
- &=& -(xe^{-x}|^{\infty}_0)  + \int^{\infty}_0 e^{-x} dx \notag
+ &=& -(xe^{-x}\big|^{\infty}_0)  - \int^{\infty}_0 (x)' \cdot (-e^{-x}) dx \notag \\
+ &=& -(xe^{-x}\big|^{\infty}_0)  + \int^{\infty}_0 e^{-x} dx \notag
  \end{eqnarray}
 \item How can we evaluate $xe^{-x}$ at $x \to \infty$?
  \begin{itemize}
@@ -905,9 +905,15 @@ we can apply the integration by substitution formula
  \begin{enumerate}
  \item $\int \frac{1}{1 + \exp(-x)}$
  \vspace{0.1cm}
+ \item $\int x\exp(x)$
+ \vspace{0.1cm}
+ \item $\int \frac{2x}{5 x^2 - 7} dx$
+ \vspace{0.1cm}
+ \item $\int x^2 (x^3 + 15)^{\frac{3}{2}} dx$
+ \item $\int x(1 - x)^4 dx$
  \item $\int^3_2 x\exp(x^2)dx$
  \item $\int^2_1 x\log x dx$
- \item $\int^1_0 \log (1 + \sqrt{x})dx$ \ (Hint: set $t = 1 + sqrt{x}$ and perform integration by substitution)
+ \item $\int^1_0 \log (1 + \sqrt{x})dx$ \ (Hint: set $t = 1 + \sqrt{x}$ and perform integration by substitution)
  \end{enumerate}
 \end{itemize}
 \end{frame}
@@ -920,7 +926,7 @@ we can apply the integration by substitution formula
 \item Tomorrow
  \begin{itemize}
  \item Vector and matrix algebra
- \item Vector/matrix noations for multivariate calculus
+ \item Vector/matrix notations for multivariate calculus
  \item Geometric meanings of vector/matrix algebra
  \item Moore \& Siegel, Chapters 12, 13, 15.2.2, 15.2.4, \& 16.1
  \end{itemize}

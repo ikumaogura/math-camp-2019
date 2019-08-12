@@ -108,7 +108,7 @@
 \begin{itemize}
 \item NO!
 \vspace{0.4cm}
-\item Rather focus on understanding the meanings of the formulas and when you should use them.
+\item Rather focus on understanding the meanings of the formulas and when/why/how you should use them.
 \end{itemize}
 \end{frame}
 
@@ -482,11 +482,12 @@ Then,
 \begin{itemize}
 \item After you rearrange the terms in the form $\mathrm{(i)} ax^2 + bx + c = 0 /\mathrm{(ii)} ax^2 + bx + c \leq 0 /\mathrm{(iii)} ax^2 + bx + c \geq 0$...
 \vspace{0.4cm}
-\item If you can easily factorize as $a(x + \alpha)(x + \beta)\ (\alpha > \beta)$ ,
+\item If you can easily factorize as $a(x + \alpha)(x + \beta)\ (\alpha > \beta, a > 0)$, then
  \begin{itemize}
  \item (i): $(x + \alpha) = 0$ and/or $(x + \beta) = 0 \Rightarrow x = -\alpha, -\beta$
  \item (ii): $(x + \alpha) \geq 0$ and  $(x + \beta) \leq 0 \Rightarrow -\alpha \leq x \leq -\beta$
  \item (iii): $(x + \alpha) \leq 0$ or $(x + \beta) \geq 0 \Rightarrow x \leq -\alpha, x \geq -\beta$
+ \item How should we do when $a < 0$?
  \end{itemize}
 \vspace{0.4cm}
 \item When we cannot easily factorize... $\rightarrow$ \textbf{Complete the square}
@@ -757,6 +758,29 @@ y = \log_{a} x \Leftrightarrow x = a^{y} \notag
 \end{frame}
 
 \begin{frame}
+\frametitle{Why Do People Use Logs?}
+\begin{itemize}
+\item Log function is (one of) the most frequently used function(s) in political science.
+\vspace{0.4cm}
+\item But why?
+\vspace{0.4cm}
+\item Log function stretches out the scale when the value of the input is small while compresses the scale when it's large.
+ \begin{itemize}
+ \item Dealing with skewness of the data
+ \item Express nonlinear relationship
+ \item ...
+ \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why Do People Use Logs? (cont.)}
+\centering
+\only<1>{\includegraphics[scale = 0.45]{fig1_log.pdf}}
+\only<2>{\includegraphics[scale = 0.45]{fig1_log1.pdf}}
+\end{frame}
+
+\begin{frame}
 \frametitle{Summation and Product Operators}
 \begin{itemize}
 \item Assume a sequence of variables/values $x_m, x_{m + 1}, \cdots, x_n \ (m < n)$
@@ -794,7 +818,11 @@ y = \log_{a} x \Leftrightarrow x = a^{y} \notag
  \item $\sum_{i = 1}^{n} a$
  \end{enumerate}
 \vspace{0.4cm}
-\item Show that $\sum_{i = 1}^{n} (ax_i + b) = a\sum_{i = 1}^{n} x_i + nb$
+\item Show that
+ \begin{itemize}
+ \item $\sum_{i = 1}^{n} (x_i + y_i) = \sum_i^n x_i + \sum_i^n y_i$
+ \item $\sum_{i = 1}^{n} (ax_i + b) = a\sum_{i = 1}^{n} x_i + nb$
+ \end{itemize}
 \end{enumerate}
 \end{frame}
 
