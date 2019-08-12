@@ -183,7 +183,7 @@ C[, 2] <- c(8, 3)
 C
 ```
 
-## Excersices!
+## Exercises!
 
 For the following matrix
 $$

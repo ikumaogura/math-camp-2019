@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Ideology score of U.S. legislators for the 115th Congress
 
-    - `HS115_members.csv.csv`
+    - `HS115_members.csv`
     - https://voteview.com/data
 
 \smallskip
@@ -73,7 +73,7 @@ require(readr)
 
 ## Loading Dataset in R: Working Directory
 
-- It is recommended that you store all the data use use in the **working directory**
+- It is recommended that you store all the data you use in the **working directory**
 
 \smallskip
 
@@ -123,7 +123,7 @@ UNideal <- read_dta("IdealpointsPublished.dta")
 
 ## data.frame Object
 
-- If we load datasets using commands like `read_csv`, the corresponding objects will be of the `data.frame` class.
+- If we load datasets using commands like `read_csv()`, the corresponding objects will be of the `data.frame` class.
 
 ```{r}
 # Let's check
@@ -158,7 +158,7 @@ voteview$nominate_dim1[c(2:5)]
 
 ## Accessing Variables in the Dataset (cont.)
 
-- To access elements of a varialbe, we can also specify logical expressions
+- To access elements of a variable, we can also specify logical expressions
 
 \smallskip
 
@@ -287,7 +287,7 @@ mean(voteview$nominate_dim1)
 mean(voteview$nominate_dim1, na.rm = TRUE)
 ```
 
-## Excercises!
+## Exercises!
 
 - Compute the mean and the standard deviation of `nominate_dim1` variable for Democratic Senators and Republican House members, respectively.
 

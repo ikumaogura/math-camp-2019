@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Today
 
-- Using R as Calculator
+- Using R as a calculator
 
 \smallskip
 
@@ -31,7 +31,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo = TRUE, tidy = FALSE}
 5 + 3 # summation
-4 - 7 # substration
+4 - 7 # subtration
 5 * 6 # product
 7 / 3 # division
 ```
@@ -159,7 +159,7 @@ sum(num)
 
 ```{r, tidy = FALSE}
 sort(num)
-sort(num, decreasing = FALSE)
+sort(num, decreasing = TRUE)
 ```
 
 

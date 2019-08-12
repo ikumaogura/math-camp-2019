@@ -94,7 +94,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - R
 
-    - Download from CRAN website f
+    - Download from CRAN website
     - https://cran.r-project.org/
 
 \bigskip
