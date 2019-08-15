@@ -39,7 +39,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
-\title[Math Camp]{Day 4: Vectors and Matrices}
+\title[Math Camp: Day 4]{Day 4: Vectors and Matrices}
 \author[Ikuma Ogura]{Ikuma Ogura}
 \institute[Georgetown]{Ph.D. student, Department of Government, Georgetown University}
 \date[August 22, 2019]{August 22, 2019}
@@ -88,7 +88,7 @@
 \begin{frame}
 \frametitle{Why Vectors and Matrices? (cont.)}
 \begin{itemize}
-\item As we covered yesterday, we need to solve the system of equation
+\item As we covered yesterday, we need to solve the system of equations
  \begin{eqnarray}
  \begin{cases}
  \frac{\partial}{\partial b_{0}} \sum_{i = 1}^n \left\{y_i - (b_0 + b_1 x_{1i} + b_2 x_{2i} + \cdots + b_{10} x_{10i})\right\}^2 = 0 \\
@@ -107,7 +107,7 @@
 \begin{itemize}
 \item Keep track of vector/matrix dimensions.
 \vspace{0.4cm}
-\item Become able to connect scalar algebra/calculus
+\item Become able to connect with scalar algebra/calculus
 \end{itemize}
 \end{frame}
 
@@ -150,7 +150,7 @@
 \begin{itemize}
 \item {\color{red} Norm} (or length) of vector $\bm{a}$ is defined as 
  \begin{equation}
- \|\bm{a}\| = \sqrt{a_1^2 + a_2^2 + \cdots + a_3^2} \notag
+ \|\bm{a}\| = \sqrt{a_1^2 + a_2^2 + \cdots + a_k^2} \notag
  \end{equation}
 \item Related types of vectors
  \begin{itemize}
@@ -320,9 +320,9 @@ is
 \begin{frame}
 \frametitle{Matrix Addition/Subtraction}
 \begin{itemize}
-\item Addition/subtraction of vectors of the same dimensions is defined as
+\item Addition/subtraction of vectors of the same dimension is defined as
  \begin{equation}
- \bm{a} + \bm{b} = \begin{pmatrix}
+ \bm{a} \pm \bm{b} = \begin{pmatrix}
  a_1 \pm b_1 \\
  a_2 \pm b_2 \\
  \vdots \\
@@ -344,7 +344,7 @@ is
 \begin{frame}
 \frametitle{Matrix Multiplication}
 \begin{itemize}
-\item We can multiply a vector $a$ by a scalar $a$ as 
+\item We can multiply a vector $\bm{a}$ by a scalar $c$ as 
  \begin{equation}
  c\bm{a} = \begin{pmatrix}
  ca_1 \\
@@ -368,7 +368,7 @@ is
 \begin{frame}
 \frametitle{Matrix Multiplication (cont.)}
 \begin{itemize}
-\item {\color{red} Dot product}/{\color{red} inner product} for vectors of the same dimensions, $\bm{a}$ and $\bm{b}$ is defined as 
+\item {\color{red} Dot product}/{\color{red} inner product} for vectors of the same dimensions, $\bm{a}$ and $\bm{b}$, is defined as 
 \begin{equation}
  \bm{a} \cdot \bm{b} = \bm{b} \cdot \bm{a} = a_{1}b_{1} + a_{2}b_{2} + \cdots + a_{k}b_{k} = \sum_j^k a_{j}b_{j} \notag 
  \end{equation}
@@ -383,7 +383,7 @@ Therefore, an inner product of two vectors is a scalar.
 \begin{itemize}
 \item If $\bm{A}$ is a $n \times k$ matrix and $\bm{B}$ is a $k \times m$ matrix, then we can define their product $\bm{C} = \bm{AB}$ where
  \begin{equation}
- c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{ik}b{kj} \notag
+ c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{ik}b_{kj} \notag
  \end{equation}
  \begin{itemize}
  \item $ij$ element of the resultant matrix $\bm{C}$ is the innner product of $i$th row of $\bm{A}$ and $j$th column of $\bm{B}$.
@@ -401,8 +401,8 @@ Therefore, an inner product of two vectors is a scalar.
  3 & 8 \\
  -5 & 2 \\
  \end{pmatrix}, \bm{B} = \begin{pmatrix}
- -4 & 6 & 5 \\
- 2 & -7 & 1
+ -4 & 6 \\
+ 2 & -7
  \end{pmatrix}. \notag
  \end{equation}
 Then their product $\bm{AB}$ can be calculated as 
@@ -545,7 +545,7 @@ Calculate the following.
 \vspace{0.4cm}
 \item {\color{red}{Symmetric Matrix}}: A square matrix where $\bm{A} = \bm{A'}$. Therefore, $a_{ij} = a_{ji}$.
 \vspace{0.4cm}
-\item {\color{red}{Triangular Matrix}}: A square matrix all the elements above or below the main diagonal are equal to 0.
+\item {\color{red}{Triangular Matrix}}: A square matrix in which all the elements above or below the main diagonal are equal to 0.
  \begin{itemize}
  \item Main diagonal: $a_{ij}$s where $i = j$
  \item A square matrix where elements above the main diagonal are 0 are called {\color{red}lower triangular}, and one where elements below the main diagonal equal 0 are called {\color{red} upper triangular}.
@@ -626,7 +626,7 @@ Calculate the following.
 \item Properties of determinant: let $\bm{A}$ be a $n \times n$ square matrix,
  \begin{enumerate}
  \item $\mathrm{det} \bm{A} = \mathrm{det} \bm{A}'$
- \item if $\bm{A}$ is either diagonal or triangular, $\mathrm{det} \bm{A} = \prod_{i = 1}^k a_{ii}$
+ \item if $\bm{A}$ is either diagonal or triangular, $\mathrm{det} \bm{A} = \prod_{i = 1}^n a_{ii}$
  \item $\mathrm{det} (c\bm{A}) = c^n\mathrm{det} \bm{A}$
  \item $\mathrm{det} \bm{AB} = \mathrm{det} \bm{BA} = \mathrm{det} \bm{A}\mathrm{det} \bm{B}$
  \end{enumerate}
@@ -647,21 +647,21 @@ Calculate the following.
 \item Some properties of the inverse
  \begin{enumerate}
  \item if $\bm{A}$ is nonsingular, $\bm{A}^{-1}$ is unique
- \item $(\bm{A}^{-1})^{-1}$
+ \item $(\bm{A}^{-1})^{-1} = \bm{A}$
  \item $(\bm{A}^{-1})' = (\bm{A}')^{-1}$
  \item $(\bm{AB})^{-1} = \bm{B}^{-1}\bm{A}^{-1}$ 
- \item $(\bm{A + B})^{-1} = \bm{A}^{-1}(\bm{A}^{-1} + \bm{B}^{-1})\bm{B}^{-1}$
+ %\item $(\bm{A + B})^{-1} = \bm{A}^{-1}(\bm{A}^{-1} + \bm{B}^{-1})^{-1}\bm{B}^{-1}$
  \item $\mathrm{det} \bm{A} \neq 0 \Leftrightarrow \bm{A}$ is nonsingular
  \end{enumerate}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{System of Equations}
+\frametitle{System of Linear Equations}
 \begin{itemize}
-\item Matrices help us express and solve system of equations.
+\item Matrices help us express and solve system of linear equations.
 \vspace{0.4cm}
-\item For example, the system of equations
+\item For example, the system of linear equations
  \begin{eqnarray}
  \begin{cases}
  x - y = 4 \\
@@ -686,9 +686,9 @@ y \\
 \end{frame}
 
 \begin{frame}
-\frametitle{System of Equations (cont.)}
+\frametitle{System of Linear Equations (cont.)}
 \begin{itemize}
-\item More generally, a system of $n$ equations with $n$ unknowns 
+\item More generally, a system of $n$ linear equations with $n$ unknowns 
  {\small
  \begin{eqnarray}
  \begin{cases}
@@ -723,7 +723,7 @@ b_n
 \end{frame}
 
 \begin{frame}
-\frametitle{System of Equations (cont.)}
+\frametitle{System of Linear Equations (cont.)}
 \begin{itemize}
 \item Example: the system of regression equations
  {\footnotesize
@@ -770,9 +770,9 @@ e_n \\
 \end{frame}
 
 \begin{frame}
-\frametitle{System of Equations (cont.)}
+\frametitle{System of Linear Equations (cont.)}
 \begin{itemize}
-\item Let's a system of equations written as 
+\item Let's solve a system of linear equations written as 
  \begin{equation}
  \bm{Ax} = \bm{b} \notag 
  \end{equation}
@@ -787,9 +787,9 @@ for $\bm{x}$.
 \end{frame}
 
 \begin{frame}
-\frametitle{System of Equations (cont.)}
+\frametitle{System of Linear Equations (cont.)}
 \begin{itemize}
-\item Example: Solving the system of equations
+\item Example: Solving the system of linear equations
  \begin{eqnarray}
  \begin{cases}
  x - y = 4 \\
@@ -861,7 +861,7 @@ where $\bm{a}$ is the vector of coefficients and $\bm{x}$ is the vector of varia
 \begin{frame}
 \frametitle{Matrix Calculus: Preparation (cont.)}
 \begin{itemize}
-\item Another example: {\color{red} quadratic form} is a polynomial in which each term is the monomial of degree 2 can be written using vectors and matrix
+\item Another example: {\color{red} quadratic form} is a polynomial in which each term is the monomial of degree 2, and can be written using vectors and a matrix
  \begin{equation}
  \bm{x}'\bm{Ax} = \sum_{i = j} a_{ii} x_i^2 + \sum_{i \neq j} (a_{ij} + a_{ji}) x_i x_j \notag 
  \end{equation}
@@ -916,7 +916,7 @@ a_{21} & a_{22} \\
 \begin{itemize}
 \item {\color{red} Gradient} of a function $f(\bm{x})$ is a column vector of dimention $n$ whose $i$th element is the partial derivative of $f(\bm{x})$ with respect to $x_i$.
  \begin{equation}
- \nabla f(\bm{x}) = \frac{\partial}{\partial \bm{x}} f(\bm{x}) \begin{pmatrix}
+ \nabla f(\bm{x}) = \frac{\partial}{\partial \bm{x}} f(\bm{x}) = \begin{pmatrix}
  \frac{\partial}{\partial x_1} f(\bm{x}) \\
  \frac{\partial}{\partial x_2} f(\bm{x}) \\
  \ \vdots \\
@@ -945,7 +945,7 @@ a_{21} & a_{22} \\
 \begin{frame}
 \frametitle{Gradient (cont.)}
 \begin{itemize}
-\item Another example: we can write the normal equation for deriving the OLS coefficients as a gradient vector. Let $S(\bm{b})$ be the function to compute the sum of squared residuals, where $\bm{b}$ is the vector of coefficients. Then, 
+\item Another example: we can write the normal equation for deriving the OLS coefficients using gradient. Let $S(\bm{b})$ be the function to compute the sum of squared residuals, where $\bm{b}$ is the vector of coefficients. Then, 
  \begin{equation}
  \nabla S(\bm{b}) = \frac{\partial}{\partial \bm{b}} S(\bm{b}) = \begin{pmatrix}
  \frac{\partial}{\partial b_0} S(\bm{b}) \\
@@ -981,7 +981,7 @@ a_{21} & a_{22} \\
 \item Rules for linear functions and qudratic forms: let $\bm{a}$ and $\bm{A}$ be vector/matrix of coefficients and $\bm{x}$ the vector of variables, then
  \begin{enumerate}
  \item $\frac{\partial}{\partial \bm{x}} (\bm{a'x}) = \frac{\partial}{\partial \bm{x}} (\bm{x'a}) = \bm{a}$
- \item $\frac{\partial}{\partial \bm{x}} (\bm{x'Ax}) = (\bm{A} + \bm{A'})x$
+ \item $\frac{\partial}{\partial \bm{x}} (\bm{x'Ax}) = (\bm{A} + \bm{A'})\bm{x}$
  \item $\frac{\partial^2}{\partial \bm{x}\partial \bm{x}'} (\bm{x'Ax}) = \bm{A} + \bm{A'}$
  \end{enumerate}
 \end{itemize}
@@ -998,7 +998,11 @@ a_{11} & a_{12} \\
 a_{21} & a_{22} \\
 \end{pmatrix}$. Demonstrate that
  \begin{equation}
- \frac{\partial}{\partial \bm{x}} (\bm{x'Ax}) = (\bm{A} + \bm{A'})x \notag
+ \frac{\partial}{\partial \bm{x}} (\bm{x'Ax}) = (\bm{A} + \bm{A'})\bm{x} \notag
+ \end{equation}
+and 
+ \begin{equation}
+ \frac{\partial^2}{\partial \bm{x}\partial \bm{x}'} (\bm{x'Ax}) = \bm{A} + \bm{A'} \notag
  \end{equation}
 \end{itemize}
 \end{frame}
@@ -1085,7 +1089,7 @@ the point $(x^{\star}, y^{\star})$ satisfies the first order condition. Also, th
 (\emph{continued from the previous slide})
 
 \vspace{0.4cm}
-Therefore, the quadratic form of $\bm{H}$ at $(x^{\star}, y^{star}) = (0, 0)$ is
+Therefore, the quadratic form of $\bm{H}$ at $(x^{\star}, y^{\star}) = (0, 0)$ is
  \begin{eqnarray}
  && \begin{pmatrix}
  x & y \\
@@ -1126,6 +1130,9 @@ Since (1) is positive when $|x| > |y|$ and negative $|x| < |y|$, $\bm{H}$ is ind
  \begin{itemize}
  \item For $(x^{\star}, y^{\star})$ to be the global min/max, the Hessian matrix must be negative/positive definite at points other than $(x^{\star}, y^{\star})$.
  \item In such cases, $f(\bm{x})$ is globally concave/convex. 
+  \begin{itemize}
+  \item e.g., $f(x, y) = -x^2 - y^2$, $f(x, y) = x^4 + 2y^2$
+  \end{itemize}
  \end{itemize}
 \vspace{0.4cm}
 \item (\emph{In most (but not all) of the applications you encounter, you don't need to care about the second order condition...})
@@ -1162,7 +1169,7 @@ Since (1) is positive when $|x| > |y|$ and negative $|x| < |y|$, $\bm{H}$ is ind
 \vspace{0.4cm}
 \item Vector norm represents the length of a vector
  \begin{itemize}
- \item We can show this using the Pythagoren theorem
+ \item We can show this using the Pythagorean theorem
  \end{itemize}
 \end{itemize}
 \end{column}
@@ -1425,7 +1432,7 @@ rotates and scales the space up.
 \vspace{0.4cm}
 \item Example: $|\bm{B}| = 7$
  \begin{itemize}
- \item compare the area of rectangles defined by the basis vactors and one by the transformed vectors
+ \item compare the area of rectangles defined by the basis vactors and one of the parallelogram by the transformed vectors
  \end{itemize}
 \end{itemize}
 \end{column}
@@ -1444,7 +1451,7 @@ rotates and scales the space up.
 \begin{itemize}
 \item Example: $|\bm{A}| = -2$
  \begin{itemize}
- \item area of orange rectangle is 2
+ \item area of orange parallelogram is 2
  \item negative sign means that the linear transformation defined by $\bm{A}$ reflects the space
  \end{itemize}
 \end{itemize}

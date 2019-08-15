@@ -60,7 +60,7 @@
  \item Probability
  \item Random variable
  \item Probability distribution
- \item (Time permitting) Probability distributions in R
+ \item (if time permits) Probability distributions in R
  \end{itemize}
 \end{itemize}
 \end{frame}
@@ -160,7 +160,7 @@
  \item $\Pr(\emptyset) = 0.$
  \item $0 \leq \Pr(A) \leq 1$
  \item $\Pr(A^c) = 1 - \Pr(A)$
- \item If $A \subseteq B$, $\Pr(A \leq \Pr(B))$
+ \item If $A \subseteq B$, $\Pr(A) \leq \Pr(B)$
  \end{enumerate}
 \end{itemize}
 \end{frame}
@@ -224,8 +224,21 @@
 
 \begin{frame}
 \frametitle{Counting: Exercises}
+\begin{enumerate}
+\item (de Mere's problem) Which is higher:
+ \begin{enumerate}
+ \item the probability of getting at least one ``6'' in 4 rolls of a 6-sided die
+ \item the probability of at least one double-six in 24 rolls of two dice
+ \end{enumerate}
+\vspace{0.4cm}
+\item (Birthday problem) Suppose 20 individuals are randomly selected. Find the probability that at least two of them have the same birthday. 	
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Counting: Exercises (cont.)}
 \begin{itemize}
-\item Calculating the probability of the following in the game of poker. (You can use calculators, but use them after simplify the fraction as much as possible)
+\item Calculate the probability of the following in the game of poker.
  \begin{enumerate}
  \item One pair
  \item Two pair
@@ -244,12 +257,15 @@
 \begin{itemize}
 \item \textbf{Conditional probability} $\Pr{A|B}$ is the probability of event $A$ given that the event $B$ occurred, which is defined as 
  \begin{equation}
- \Pr(A|B) = \frac{\Pr(A \cap B)}{\Pr(A)} \notag
+ \Pr(A|B) = \frac{\Pr(A \cap B)}{\Pr(B)} \notag
  \end{equation}
 \vspace{0.2cm}
-\item If $\Pr(A) \neq 0$, $\Pr(A \cap B) = \Pr(A|B)\Pr(A)$
+\item If $\Pr(A) \neq 0$, $\Pr(A \cap B) = \Pr(A|B)\Pr(B)$
 \vspace{0.4cm}
 \item If $\Pr(A|B) = \Pr(A)$, events $A$ and $B$ are said to be \textbf{independent}.
+ \begin{itemize}
+ \item Equivalently, if $A$ and $B$ are independent,s $\Pr(A \cap B) = \Pr(A)\Pr(B)$
+ \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -317,7 +333,7 @@ Therefore, from the axiom of probability,
 \item Example: (Monty Hall problem) You are on a game show and asked to choose between three doors. Behind each door, there is either a car or a goat. After you choose a door, the host, Monty, opens another door, shows a goat, and gives you a chance to change your choice. Should you change your choice?
 \vspace{0.4cm}
  \begin{itemize}
- \item Answer: let's name the three doors A, B, and C, and represent the event that a car is behind the corresponding door. Let $X_{M} \ (X \in \left\{A, B, C\right\})$ denote the event that Monty opens the door $X$. For generality, let's assume you pick the door $A$ and Monty opens the door $B$. Therefore, we need to compare the probability $\Pr(A|B_{M})$ and $\Pr(C|B_{M})$. lHere, let's also assume that
+ \item Answer: let's name the three doors A, B, and C, and represent the event that a car is behind the corresponding door. Let $X_{M} \ (X \in \left\{A, B, C\right\})$ denote the event that Monty opens the door $X$. For generality, let's assume you pick the door $A$ and Monty opens the door $B$. Therefore, we need to compare the probability $\Pr(A|B_{M})$ and $\Pr(C|B_{M})$. Here, let's also assume that
   \begin{equation}
   \Pr(A) = \Pr(B) = \Pr(C) = \frac{1}{3}. \notag
   \end{equation}  
@@ -343,20 +359,20 @@ and
 &=& \frac{1 \cdot \frac{1}{3}}{\frac{1}{2} \cdot \frac{1}{3} + 0 + 1 \cdot \frac{1}{3}} = \frac{2}{3} \notag
 \end{eqnarray}
 }
-Therefore, you should switch the you choose from $A$ to $C$.
+Therefore, you should switch the door you choose from $A$ to $C$.
 \end{frame}
 
 \begin{frame}
 \frametitle{Bayes Rule: Exercise}
 \begin{itemize}
-\item In Orange County, 51\% of the adults are males. One adult is randomely selected for a survey, and the selected survey subjest was make smaking tobacco. Based on administrative data, we know that 9.5\% of men smoke tobacco, whereas 1.7\% of women smoke tobacco. What is the probability that the selected subject is a male?
+\item In Orange County, 51\% of the adults are men. One adult is randomely selected for a survey, and the selected survey subjest was smoking cigarettes. Based on administrative data, we know that 16\% of men smoke cigarettes, whereas 12\% of women do so. What is the probability that the selected subject is a man?
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Random Variable}
 \begin{itemize}
-\item \textbf{Random variable} is a function that from a sample space to real numbers.
+\item \textbf{Random variable} is a function from a sample space to real numbers.
 \vspace{0.4cm}
 \item We use capital letters (e.g., $X$) to represent random variables and small letters (e.g., $x$) to denote their realizations (concrete values they take).
 \vspace{0.4cm}
@@ -401,7 +417,7 @@ Here, outcomes in the sample space (= combination of 5 cards) are mapped to real
 \begin{frame}
 \frametitle{Random Variable (cont.)}
 \begin{itemize}
-\item Example 2: For the example of archery we take up earlier, we can define the random variable $X$ as 
+\item Example 2: For the example of archery we saw earlier, we can define the random variable $X$ as 
  \begin{equation}
  X(\left\{\mathrm{Arrow \ hits \ the \ region \ }i\right\}) = i. \notag
  \end{equation}
@@ -419,10 +435,10 @@ In this case, even though the sample space is continuous, the random variable $X
 \begin{frame}
 \frametitle{Random Variable (cont.)}
 \begin{itemize}
-\item Randomness does not mean lack of pattern/structure.
+\item Randomness does not mean lack of pattern/structure/order.
  \begin{itemize}
  \item Randomness means that the outcome of some process/realization of the variable is not deterministic.
- \item Pattern/structure of the process is characterized by probability.
+ \item Pattern/structure/order of the process is characterized by probability.
  \end{itemize}
 \end{itemize}
 \end{frame}
@@ -466,7 +482,7 @@ In this case, even though the sample space is continuous, the random variable $X
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{itemize}
-\item For a continuous random variable, we cannot allow a point $X = x$ to allow pobability larger than 0!
+\item For a continuous random variable, we cannot allow a point $X = x$ to have probability larger than 0!
 \vspace{0.4cm}
 \item $f(x)$ describes the \emph{relative likelihood} that $X$ equals to $x$.
 \vspace{0.4cm}
@@ -503,7 +519,7 @@ In this case, even though the sample space is continuous, the random variable $X
 \begin{frame}
 \frametitle{Cumulative Density Function}
 \begin{itemize}
-\item \textbf{Cumulative density function} (CDF) describes the probability that the random variable $X$ is smaller or euqal to $x$.
+\item \textbf{Cumulative density function} (CDF) describes the probability that the random variable $X$ is smaller than or euqal to $x$.
  \begin{itemize}
  \item For a discrete random variable, CDF is defined as 
   \begin{equation}
@@ -520,7 +536,7 @@ In this case, even though the sample space is continuous, the random variable $X
 \begin{frame}
 \frametitle{Cumulative Density Function (cont.)}
 \begin{itemize}
-\item For a continuous random variable, from the (first) fundamental theory of calculus, 
+\item For a continuous random variable, from the fundamental theorem of calculus, 
  \begin{equation}
  F'(x) = f(x) \notag
  \end{equation}
@@ -552,7 +568,7 @@ In this case, even though the sample space is continuous, the random variable $X
  \begin{equation}
  f(x, y) = f(x)f(y) \notag 
  \end{equation}
-for all $x$ and $y$ in the domain, we say $X$ and $Y$ are \textbf{independent}.
+for all $x$ and $y$ in the support, we say $X$ and $Y$ are \textbf{independent}.
 \end{itemize}
 \end{frame}
 
@@ -651,6 +667,8 @@ for all $x$ and $y$ in the domain, we say $X$ and $Y$ are \textbf{independent}.
  \mathrm{Var}(X) &=& \mathrm{E}[(X - \mathrm{E}(X))^2] \notag \\
  &=& E(X^2) - (E(X))^2
  \end{eqnarray}
+%\vspace{0.2cm}
+\item Square root of $\mathrm{Var}(X)$ is called the \textbf{standard deviation}.
 \end{itemize}
 \end{frame}
 
@@ -696,6 +714,7 @@ Equivalently,
  \end{eqnarray}
  \begin{itemize}
  \item By definition, $\mathrm{Cov}(X, X) = \mathrm{Var}(X)$.
+ \item If $X$ and $Y$ are independent, $\mathrm{Cov}(X, Y) = 0$.
  \end{itemize}
 \end{itemize}
 \end{frame}
@@ -735,7 +754,13 @@ Find the expectation and variance of this distribution.
 \begin{itemize}
 \item Here I introduce some of the probability distributions often used in social science research.
 \vspace{0.4cm}
-\item We can determine the exact forms of their PMF/PDF by specifying the vallues of the \textbf{parameters}.
+\item We can determine the exact forms of their PMF/PDF by specifying the values of the \textbf{parameters}.
+\vspace{0.4cm}
+\item Additional terms
+ \begin{itemize}
+ \item We say random variable $X$ \textbf{follows} some specific probability distribution to mean that the values of $X$ are determined according to the PMF/PDF of the corresponding probability distribution
+ \item \textbf{Support} of the probability distribution is the subset of its domain where probability/density is not 0. 
+ \end{itemize} 
 \end{itemize}
 \end{frame}
 
@@ -743,12 +768,17 @@ Find the expectation and variance of this distribution.
 \frametitle{Binomial Distribution}
 \begin{itemize}
 \item Binomial random variable $X$ describes the number of ``successes'' ($x = 1$) out of $n$ identical trials, where the probability of success is $p$ (so the probability of ``failure'' is $1 - p$).
-\vspace{0.4cm}
+\vspace{0.3cm}
 \item Binomial PMF is defined as
  \begin{equation}
- f(x|n, p) = \Pr(X = x|n, p) = \binom{n}{x} p^x (1 - p)^{1 - p} \notag
+ f(x|n, p) = \Pr(X = x|n, p) = \binom{n}{x} p^x (1 - p)^{n - x} \notag
  \end{equation}
-\vspace{0.4cm}
+\vspace{0.1cm}
+\item Binomial distribution with parameters $n$ and $p$ is often denoted as $B(n, p)$
+ \begin{itemize}
+ \item $X \sim B(n, p)$ means that the random variable $X$ follows the binomial distribution with parameters $n$ and $p$.
+ \end{itemize}
+\vspace{0.3cm}
 \item Expectation and variance
  \begin{itemize}
  \item $\mathrm{E}(X) = np$
@@ -767,9 +797,9 @@ Find the expectation and variance of this distribution.
 \frametitle{Binomial Distribution (cont.)}
 \begin{itemize}
 \item Example: Suppose 14\% of US adults smoke cigarettes. If we randomly sample 1,000 individuals from US adults, the number of smokers in the sample, $X$, is modeled using the binomial distribution as
- {\small
+ {\footnotesize
  \begin{equation}
- f(x|1000, 0.14) = \Pr(X = x|1000, 0.14) = \binom{1000}{x} (0.14)^x \cdot (0.86)^{1 - p} \notag
+ f(x|1000, 0.14) = \Pr(X = x|1000, 0.14) = \binom{1000}{x} (0.14)^x \cdot (0.86)^{1000 - x} \notag
  \end{equation}
  }
 \end{itemize}
@@ -783,7 +813,9 @@ Find the expectation and variance of this distribution.
  f(x|\lambda) = \Pr(X = x|\lambda) = \frac{e^{-\lambda}\lambda^x}{x!} \notag
  \end{equation}
 \vspace{0.2cm}
-\item The support of a Poisson random variable is $\N$, it is often used to model counts.
+\item Poisson distribution with parameter $\lambda$ is often denoted as $\mathrm{Pois}(\lambda)$.
+\vspace{0.4cm}
+\item The support of a Poisson random variable is $\N$, so it is often used to model counts.
 \vspace{0.4cm}
 \item Expectation and variance
  \begin{itemize}
@@ -815,11 +847,18 @@ Find the expectation and variance of this distribution.
 \begin{frame}
 \frametitle{Normal Distribution}
 \begin{itemize}
-\item A random variable $X$ follows a normal distribution with expectation $\mu$ and variance $\sigma^2$ if its PDF is 
+\item A random variable $X$ follows a normal distribution (or Gaussian distribution) with expectation $\mu$ and variance $\sigma^2$ if its PDF is 
  \begin{equation}
  f(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\Big(-\frac{(x - \mu)^2}{2\sigma^2}\Big) \notag
  \end{equation}
 \vspace{0.2cm}
+\item Normal distribution with parameters $\mu$ and $\sigma^2$ is often denoted as $N(\mu, \sigma^2)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Normal Distribution (cont.)}
+\begin{itemize}
 \item Normal distribution with $\mu = 0$ and $\sigma = 1$ is called the \textbf{standard normal distribution}, and we often denote its PDF as $\phi(x)$ 
  \begin{equation}
  \phi(x) = \frac{1}{\sqrt{2\pi}} \exp\Big(-\frac{x^2}{2}\Big) \notag
@@ -828,6 +867,9 @@ and its CDF as $\Phi(x)$
  \begin{equation}
  \Phi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \exp\Big(-\frac{t^2}{2}\Big) dt \notag
  \end{equation}
+ \begin{itemize}
+ \item Using this notation, the PDF of $N(\mu, \sigma^2)$ can be written as $\frac{1}{\sigma}\phi(\frac{x - \mu}{\sigma})$
+ \end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -881,7 +923,7 @@ and its CDF as $\Phi(x)$
 \end{frame}
 
 \begin{frame}
-\frametitle{Now They Look Familiar (Right?)}
+\frametitle{Now They Look Familiar! (Right?)}
 \centering
 \only<1>{\includegraphics[scale = 0.7]{fig1_bailey.png}}
 \only<2>{\includegraphics[scale = 0.5]{fig1_gibbons.png}}
@@ -896,6 +938,8 @@ and its CDF as $\Phi(x)$
 \item Multiple integral
 \vspace{0.4cm}
 \item Matrix decomposition
+\vspace{0.4cm}
+\item More probability theory
 \vspace{0.4cm}
 \item ...
 \end{itemize}

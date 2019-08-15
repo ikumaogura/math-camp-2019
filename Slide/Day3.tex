@@ -39,7 +39,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
-\title[Math Camp]{Day 3: Calculus 2}
+\title[Math Camp: Day 3]{Day 3: Calculus 2}
 \author[Ikuma Ogura]{Ikuma Ogura}
 \institute[Georgetown]{Ph.D. student, Department of Government, Georgetown University}
 \date[August 21, 2019]{August 21, 2019}
@@ -70,9 +70,9 @@
 \begin{frame}
 \frametitle{Partial Derivative}
 \begin{itemize}
-\item What to do when there are more than one variables?
+\item What to do when there are more than one input variables?
 \vspace{0.4cm}
-\item \textbf{Partial derivative} of a function with more than one variable is defined as the derivative with respect to one of those variables with others held constant.
+\item \textbf{Partial derivative} of a function with more than one input variable is defined as the derivative with respect to one of those variables with others held constant.
 \vspace{0.4cm}
 \item Formally, the partial derivative of $f(x_1, x_2, \cdots, x_n)$ with respect to $x_i$ is defined as
  {\scriptsize
@@ -104,7 +104,7 @@
 \begin{frame}
 \frametitle{Partial Derivative: Example (cont.)}
 \begin{itemize}
-\item We can take the second-order derivative as
+\item We can take second-order derivative as
  \begin{eqnarray}
  \frac{\partial^2 f}{\partial x^2}(x, y) &=& \frac{\partial}{\partial x} \Big(\frac{\partial}{\partial x} f(x, y)\Big) \notag \\
  &=& (6xy)' = 6y \cdot (x)' = 6y \notag 
@@ -137,7 +137,7 @@
 \begin{frame}
 \frametitle{Partial Derivative: Exercises}
 \begin{itemize}
-\item Let $f(x, y) = 3x^3y^2 - 3xy^2 - \sqrt{y} + x$. Then calculate the following partial derivatives.
+\item Let $f(x, y) = 3x^3y^2 - 3xy^2 - \sqrt{y} + x$. Calculate the following partial derivatives.
  \begin{enumerate}
  \item $\frac{\partial f}{\partial x} (x, y)$
  \vspace{0.1cm}
@@ -431,7 +431,7 @@ is called the \textbf{normal equation}.
  \item \textbf{Area under the curve}
  \end{enumerate}
 \vspace{0.4cm}
-\item \textbf{Fundamental theory of calculus} connects these two explanations.
+\item \textbf{Fundamental theorem of calculus} connects these two explanations.
 \end{itemize}
 \end{frame}
 
@@ -493,7 +493,7 @@ which is equal to $F(x)$.
 \begin{itemize}
 \item Suppose we want to find the area under the curve defined by a function $f(x)$ and some interval $x \in [a, b]$.
 \vspace{0.4cm}
-\item Let's approximate the area with a seris of rectangles.
+\item Let's approximate the area using rectangles.
  \begin{itemize}
  \item First partition the interval into $n$ regions.
  \item Let the length of each subinterval be $\Delta x$
@@ -564,6 +564,23 @@ which is equal to $F(x)$.
 
 \begin{frame}
 \frametitle{Fundamental Theorem of Calculus}
+\begin{itemize}
+\item (First) \textbf{Fundamental Theorem of Calculus}: Let $f(x)$ be a function on an interval $[a, b]$, and $F(x)$ be a function defined on $[a, b]$ by
+ \begin{equation}
+ F(x) = \int^x_a f(x)dx \notag
+ \end{equation}
+Then,
+ \begin{equation}
+ F'(x) = f(x) \notag
+ \end{equation}
+for all $x \in (a, b)$.
+\vspace{0.4cm} 
+\item The definite integral of $f(x)$ is one of its antiderivatives! 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fundamental Theorem of Calculus (cont.)}
 \begin{itemize}
 \item (Second) \textbf{Fundamental Theorem of Calculus}: Let $f(x)$ be a function on an interval $[a, b]$, and $F(x)$ be an antiderivative of $f(x)$ on $[a, b]$. Then,
  \begin{equation}
