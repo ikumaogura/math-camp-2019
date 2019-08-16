@@ -79,7 +79,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Example: Effort and Team Performance in Japanese Professional Soccer
 
-- Do total distance run matter for soccer team performance? 
+- Does total distance run matter for soccer team performance? 
 
     - Russia in 2018 World Cup?
 

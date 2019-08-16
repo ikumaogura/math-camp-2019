@@ -23,11 +23,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \smallskip
 
-- (Time permitting) `apply()` function
+- (If time permits) `apply()` function
 
 ## Creating Vectors and Matrices
 
-- As covered yesterday, in R we create vectors using `c()` command.
+- As we covered yesterday, in R we create vectors using `c()` command.
 
 \smallskip
 

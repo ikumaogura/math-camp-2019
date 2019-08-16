@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Object
 
-- In R, we store information as an **object**. Once we create an object, we can refer it to its name.
+- In R, we store information as an **object**. Once we create an object, we can refer to it by its name.
 
 \smallskip
 
@@ -133,7 +133,7 @@ Operator | Meaning
 
 \smallskip
 
-- If we specify multiple arguments, 
+- When we specify multiple arguments, 
 
     - separate the arguments by commas
     - it is desirable to specify them along with their names unless they are obvious

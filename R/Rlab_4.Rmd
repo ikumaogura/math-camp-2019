@@ -192,7 +192,7 @@ UNideal$Idealpoint[UNideal$ccode == 2
 
 ## Creating New Variables (cont.)
 
-- We can apply the knowledge learned so far so to do variable recodings!
+- We can apply the knowledge learned so far to do variable recodings!
 
 \smallskip
 
