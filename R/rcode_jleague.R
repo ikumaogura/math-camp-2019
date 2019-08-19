@@ -9,7 +9,7 @@ require(XML)
 
 # Scrape match data
 j1.dat <- rep(NA, 7)
-for (i in 1:20){ # Loop over weeks
+for (i in 1:23){ # Loop over weeks
   # List of matches in the week
   u <- paste0("https://www.jleague.jp/match/section/j1/", i, "/")
   tmp <- htmlParse(getURL(u), encoding = "UTF-8")
