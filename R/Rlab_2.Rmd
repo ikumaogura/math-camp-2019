@@ -7,6 +7,7 @@ fontsize: 10pt
 output: 
   beamer_presentation:
     theme: Boadilla
+    latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
@@ -83,11 +84,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo = TRUE, tidy = FALSE}
 # Numeric vector
-num <- c(4, 2, 6, 8, 5) 
+num.1 <- c(4, -2, -7, 6, 8, 5, -3, 6, -4) 
+num.2 <- c(4, 6, 5, 2, 3)
 # Character vector
 program.lang <- c("R", "Python", "C", "Java")
 # Logical vector
-comparison <- (num >= 5)
+comparison <- (num.1 >= 5)
 comparison
 ```
 
@@ -95,7 +97,8 @@ comparison
 
 ```{r, echo = TRUE, tidy = FALSE}
 # Object class/type
-class(num)
+class(num.1)
+class(num.2)
 class(program.lang)
 class(comparison)
 ```
@@ -149,17 +152,17 @@ Operator | Meaning
 ## Command/Function: Example
 
 ```{r, tidy = FALSE}
-log(num)
-sqrt(num)
-length(num)
-sum(num)
+log(num.2)
+sqrt(num.2)
+length(num.1)
+sum(num.1)
 ```
 
 ## Command/Function: Example (cont.)
 
 ```{r, tidy = FALSE}
-sort(num)
-sort(num, decreasing = TRUE)
+sort(num.1)
+sort(num.1, decreasing = TRUE)
 ```
 
 
@@ -168,6 +171,22 @@ sort(num, decreasing = TRUE)
 - Output of `help("sort")`
 
 ![Output of `help("sort")`](help_example.png)
+
+## Exercises!
+
+1. Perform the following calculations. 
+
+    - $0.0098 * 0.005$
+    - $9 * (\log(3) - \sqrt{2}) + 7$
+    - $15!$
+
+\smallskip
+
+2. For the `num.1` object we created earlier,
+
+    - Calculate the product of all the numbers.
+    - Count the number of elements larger than 0.
+
 
 ## Tomorrow 
 
