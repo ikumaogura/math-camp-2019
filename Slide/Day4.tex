@@ -987,25 +987,25 @@ a_{21} & a_{22} \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Rules for Matrix Calculus: Exercise}
-\begin{itemize}
-\item Let $\bm{x} = \begin{pmatrix}
-x_1 \\
-x_2 \\
-\end{pmatrix}$ and $\bm{A} = \begin{pmatrix}
-a_{11} & a_{12} \\
-a_{21} & a_{22} \\
-\end{pmatrix}$. Demonstrate that
- \begin{equation}
- \frac{\partial}{\partial \bm{x}} (\bm{x'Ax}) = (\bm{A} + \bm{A'})\bm{x} \notag
- \end{equation}
-and 
- \begin{equation}
- \frac{\partial^2}{\partial \bm{x}\partial \bm{x}'} (\bm{x'Ax}) = \bm{A} + \bm{A'} \notag
- \end{equation}
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{Rules for Matrix Calculus: Exercise}
+%\begin{itemize}
+%\item Let $\bm{x} = \begin{pmatrix}
+%x_1 \\
+%x_2 \\
+%\end{pmatrix}$ and $\bm{A} = \begin{pmatrix}
+%a_{11} & a_{12} \\
+%a_{21} & a_{22} \\
+%\end{pmatrix}$. Demonstrate that
+% \begin{equation}
+% \frac{\partial}{\partial \bm{x}} (\bm{x'Ax}) = (\bm{A} + \bm{A'})\bm{x} \notag
+% \end{equation}
+%and 
+% \begin{equation}
+% \frac{\partial^2}{\partial \bm{x}\partial \bm{x}'} (\bm{x'Ax}) = \bm{A} + \bm{A'} \notag
+% \end{equation}
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Multivariate Optimization}
@@ -1133,6 +1133,23 @@ Since (1) is positive when $|x| > |y|$ and negative $|x| < |y|$, $\bm{H}$ is ind
  \end{itemize}
 \vspace{0.4cm}
 \item (\emph{In most (but not all) of the applications you encounter, you don't need to care about the second order condition...})
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multivariate Optimization (cont.)}
+\begin{itemize}
+\item In the problem set, you're asked to find regression coefficients $\bm{b} = \begin{pmatrix}
+b_0 & b_1 & \cdots & b_k
+\end{pmatrix}'$ which best fit the data by minimizing the sum of squared residuals.
+ \begin{itemize}
+ \item First check that the sum of squared residuals can be represented as the dot product of residual vector $\bm{e} = \begin{pmatrix}
+ e_1 & e_2 & \cdots & e_n
+ \end{pmatrix}'$ with itself.
+ \item Express sum of squared residuals with $\bm{y}, \bm{X}, $ and $\bm{b}$.
+ \item Differentiate the sum of squared residuals with $\bm{b}$ and set the gradient vector to $\bm{0}$.
+ \item Solve the system of linear equations. 
+ \end{itemize}
 \end{itemize}
 \end{frame}
 
