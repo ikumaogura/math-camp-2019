@@ -6,11 +6,11 @@ Please see the syllabus for the details of the course.
 
 ## Note
 
-- This course is intended to introduce basic mathematics to applied political science students, so the lectture materials are not mathetically rigorous.
+- This course is intended to introduce basic mathematics to applied political science students, so the lecture materials are not mathetically rigorous.
 
 - Please contact the instructor for answer keys.
 
-- Softwares
+- Softwares used to create the course materials
     - `LaTeX`
     - `R`
     - <a href = "https://www.geogebra.org/">Geogebra</a>
